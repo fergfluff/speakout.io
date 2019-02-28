@@ -4,7 +4,7 @@
 
 var port = process.env.PORT || 9001;
 
-var server = require('http'),
+var server = require('https'),
     url = require('url'),
     path = require('path'),
     fs = require('fs');
@@ -68,7 +68,13 @@ function serverHandler(request, response) {
     }
 }
 
-var app = server.createServer(serverHandler);
+let options = {
+  // Key and certificate for https, saved in root folder
+  key: fs.readFileSync('my-key.pem'),
+  cert: fs.readFileSync('my-cert.pem')
+};
+
+var app = server.createServer(options, serverHandler);
 
 function runServer() {
     app = app.listen(port, process.env.IP || '0.0.0.0', function() {
