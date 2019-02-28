@@ -1,6 +1,6 @@
 <!--
 > WebRTC Broadcasting Open Source Code:
-> Making a second change to see if github is working properly 
+> Making a second change to see if github is working properly
 > Muaz Khan     - wwww.MuazKhan.com
 > MIT License   - www.WebRTC-Experiment.com/licence
 > Documentation - github.com/muaz-khan/WebRTC-Experiment/tree/master/video-broadcasting
@@ -96,7 +96,7 @@
         <article>
             <header style="text-align: center;">
                 <h1>
-                    speakout.io
+                    Listen
                 </h1>
             </header>
 
@@ -109,6 +109,8 @@
                         <option>Only Audio</option>
                         <option>Screen</option>
                     </select>
+
+                    <!-- Remove these on the /listen page  -->
                     <input type="text" id="broadcast-name">
                     <button id="setup-new-broadcast" class="setup">Broadcast</button>
                 </section>
@@ -160,6 +162,12 @@
                     onRoomFound: function(room) {
                         var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
                         if (alreadyExist) return;
+
+                        // In JS you can write HTML
+                        // Upon load of /listen page show sentence saying " waiting for braodcast "
+                        // Replace this p tag with who is broadcasting once a room is found
+                        // Use a selector to get broadcaster name /  room name
+                        // And create a button
 
                         if (typeof roomsList === 'undefined') roomsList = document.body;
 
