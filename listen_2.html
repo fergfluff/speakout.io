@@ -6,25 +6,16 @@
 > Documentation - github.com/muaz-khan/WebRTC-Experiment/tree/master/video-broadcasting
 -->
 
-
-<!-- QUESTIONS
-
-> With separate /speak and /listen pages, why doesn't a new room show up on /listen?
-> The new room is not findable through console.log on /speak either
-
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>speakout.io</title>
 
         <script>
-            // if(!location.hash.replace('#', '').length) {
-            //     location.href = location.href.split('#')[0] + '#' + (Math.random() * 100).toString().replace('.', '');
-            //     location.reload();
-            // }
+            if(!location.hash.replace('#', '').length) {
+                location.href = location.href.split('#')[0] + '#' + (Math.random() * 100).toString().replace('.', '');
+                location.reload();
+            }
         </script>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -105,27 +96,30 @@
         <article>
             <header style="text-align: center;">
                 <h1>
-                    Speak
+                    Listen
                 </h1>
             </header>
 
 
             <!-- copy this <section> and next <script> -->
             <section class="experiment">
+
+                <p class="listen_1">There is no speech broadcasting yet.
+                <br>
+                Come back when broadcasting begins.
+                </p>
+
                 <section>
                     <select id="broadcasting-option">
                         <option>Audio + Video</option>
                         <option>Only Audio</option>
                         <option>Screen</option>
                     </select>
-                    <input type="text" id="broadcast-name" class="speakerClass">
 
-                    <!-- Create a Submit Name button that appear right away -->
-
-                    <!-- This button becomes the "Start" button, and is hidden at first -->
-                    <button id="setup-new-broadcast" class="setup speakerClass">Start Broadcast</button>
-
-                </section>
+                     <!-- Remove these on the /listen page  -->
+                    <input type="text" id="broadcast-name">
+                    <button id="setup-new-broadcast" class="setup">Broadcast</button>
+                 </section>
 
                 <!-- list of all available broadcasting rooms -->
                 <table style="width: 100%;" id="rooms-list"></table>
@@ -142,12 +136,10 @@
                 var config = {
                     openSocket: function(config) {
                       console.log("openSocket");
-
                         var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
                         var SIGNALING_SERVER = 'https://webrtcweb.com:9559/';
 
-                        //config.channel = config.channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
-                        config.channel = config.channel || "speakout";
+                        config.channel = config.channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
                         var sender = Math.round(Math.random() * 999999999) + 999999999;
 
                         io.connect(SIGNALING_SERVER).emit('new-channel', {
@@ -162,7 +154,6 @@
                         });
 
                         socket.send = function (message) {
-                          console.log("sending through socket: " + message);
                             socket.emit('message', {
                                 sender: sender,
                                 data: message
@@ -171,18 +162,20 @@
 
                         socket.on('message', config.onmessage);
                     },
-
                     onRemoteStream: function(htmlElement) {
                         videosContainer.appendChild(htmlElement);
                         rotateInCircle(htmlElement);
                     },
-
-                    // PROBABLY
-                    // I can remove this function on /speak to prevent join broadcast button appearing
                     onRoomFound: function(room) {
-                      console.log("onRoomFound, line 174");
+                      console.log("onRoomFound" + room);
                         var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
                         if (alreadyExist) return;
+
+                        // In JS you can write HTML
+                        // Upon load of /listen page show sentence saying " waiting for braodcast "
+                        // Replace this p tag with who is broadcasting once a room is found
+                        // Use a selector to get broadcaster name /  room name
+                        // And create a button
 
                         if (typeof roomsList === 'undefined') roomsList = document.body;
 
@@ -195,7 +188,6 @@
                         joinRoomButton.setAttribute('data-broadcaster', room.broadcaster);
                         joinRoomButton.setAttribute('data-roomToken', room.broadcaster);
                         joinRoomButton.onclick = function() {
-                          console.log("joinRoomButton clicked");
                             this.disabled = true;
 
                             var broadcaster = this.getAttribute('data-broadcaster');
@@ -217,7 +209,7 @@
 
                 function setupNewBroadcastButtonClickHandler() {
                     document.getElementById('broadcast-name').disabled = true;
-                    document.getElementById('setup-new-broadcast').style.visibility = "hidden";
+                    document.getElementById('setup-new-broadcast').disabled = true;
 
                     DetectRTC.load(function() {
                         captureUserMedia(function() {
@@ -229,7 +221,6 @@
                                 shared = 'screen';
                             }
 
-                            console.log("create room being called: " + document.getElementById('broadcast-name').value);
                             broadcastUI.createRoom({
                                 roomName: (document.getElementById('broadcast-name') || { }).value || 'Anonymous',
                                 isAudio: shared === 'audio'
@@ -310,83 +301,16 @@
                     getUserMedia(mediaConfig);
                 }
 
-
-
-
                 var broadcastUI = broadcast(config);
 
                 /* UI specific */
                 var videosContainer = document.getElementById('videos-container') || document.body;
-
                 var setupNewBroadcast = document.getElementById('setup-new-broadcast');
-
                 var roomsList = document.getElementById('rooms-list');
 
                 var broadcastingOption = document.getElementById('broadcasting-option');
 
-                // This if the new broadcast button has a value
-                // and user clicks the button,
-                // then run the click handler
-                // Create a new little function called submitUserName that
-                // if (setupNewBroadcast) setupNewBroadcast.onclick = submitUserName;
-
-                // Create the submitNameButton using javascript
-                //   var submitNameButton = document.createElement("button");
-                //   document.body.appendChild(submitNameButton);
-                // }
-
-                // then run javascript function showing and hiding classes
-                // document.getElementById("setupNewBroadcast").addEventListener("click", function() {
-          			// 	console.log("user submitted Name")
-                //
-                //   hideClass("page1");
-                //   showClass("page2");
-                //
-          			// });
-
-
-
                 if (setupNewBroadcast) setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
-
-                // function hideClass(className) {
-                //
-                //   var divsToHide = document.getElementsByClassName(className); //divsToHide is an array
-                //     for(var i = 0; i < divsToHide.length; i++){
-                //         divsToHide[i].style.visibility = "hidden"; // or
-                //         divsToHide[i].style.display = "none"; // depending on what you're doing
-                //     }
-                //
-                //   }
-                //
-                //   function showClass(className) {
-                //
-                //     var divsToShow = document.getElementsByClassName(className); //divsToHide is an array
-                //       for(var i = 0; i < divsToShow.length; i++){
-                //           divsToShow[i].style.visibility = "visible"; // or
-                //           divsToShow[i].style.display = "block"; // depending on what you're doing
-                //       }
-                //
-                //     }
-
-
-
-
-                // function submitUserName() {
-                //
-                //   //call hideClass with the name of the class as a string so it can be compared/found
-                //   hideClass("page1");
-                //   showClass("page2");
-                //
-                //   // set the value of the input value to be the user's name
-                //   // userName will be used for the design of my website - to repeat the room's name as needed
-                //   config.userName = (document.getElementById('broadcast-name') || { }).value || 'Anonymous';
-                //   document.getElementById('broadcast-name').style.display = "none";
-                //
-                //   // Change the functionality of the button back to the original functionality
-                //   // could add fancy things like change the color/status of the button
-                //   setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
-                // }
-
 
                 function hideUnnecessaryStuff() {
                     var visibleElements = document.getElementsByClassName('visible'),

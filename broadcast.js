@@ -26,6 +26,7 @@ var broadcast = function(config) {
     }
 
     function onDefaultSocketResponse(response) {
+      console.log("receicevd socket " + response);
         if (response.userToken == self.userToken) return;
 
         if (isGetNewRoom && response.roomToken && response.broadcaster) config.onRoomFound(response);
@@ -211,6 +212,7 @@ var broadcast = function(config) {
     }
 
     function startBroadcasting() {
+      console.log("every 3 seconds")
         defaultSocket && defaultSocket.send({
             roomToken: self.roomToken,
             roomName: self.roomName,
