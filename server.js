@@ -2,7 +2,7 @@
 // MIT License    - www.WebRTC-Experiment.com/licence
 // Documentation  - github.com/muaz-khan/getScreenId
 
-var port = process.env.PORT || 9001;
+var port = process.env.PORT || 443;
 
 var server = require('https'),
     url = require('url'),
@@ -41,7 +41,7 @@ function serverHandler(request, response) {
                 'Content-Type': 'text/html'
             });
 
-            filename += '/index.html';
+            filename += '/finishqueensboulevard.html';
         }
 
 
@@ -70,8 +70,13 @@ function serverHandler(request, response) {
 
 let options = {
   // Key and certificate for https, saved in root folder
-  key: fs.readFileSync('my-key.pem'),
-  cert: fs.readFileSync('my-cert.pem')
+  // key: fs.readFileSync('my-key.pem'),
+  // cert: fs.readFileSync('my-cert.pem')
+  // key: fs.readFileSync('/etc/letsencrypt/live/www.speakout.io/privkey.pem'),
+  // cert: fs.readFileSync('/etc/letsencrypt/live/www.speakout.io/fullchain.pem')
+  key: fs.readFileSync('privkey.pem'),
+  cert: fs.readFileSync('cert.pem')
+
 };
 
 var app = server.createServer(options, serverHandler);
@@ -89,3 +94,24 @@ function runServer() {
 }
 
 runServer();
+
+//this second server runs on 80 and sends anyone to 443
+// when adding express, need to install the package npm install express
+var express = require('express')
+var httpapp = express()
+
+httpapp.get('/', function (req, res) {
+  res.redirect('https://www.speakout.io/')
+})
+
+httpapp.get('/finishqueensboulevard', function (req, res) {
+  res.redirect('https://www.speakout.io/finishqueensboulevard.html')
+})
+
+httpapp.get('/speak', function (req, res) {
+  res.redirect('https://www.speakout.io/speak.html')
+})
+
+httpapp.listen(80, function () {
+  console.log('I found someone asking for 80, send them to 443')
+})
