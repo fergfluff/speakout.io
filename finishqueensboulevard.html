@@ -107,11 +107,19 @@
                 <h1>
                     Listen
                 </h1>
+
             </header>
 
 
             <!-- copy this <section> and next <script> -->
             <section class="experiment">
+
+              <p>
+                  Welcome to SpeakOut, where you can amplify and listen to live protest speeches.
+              </p>
+              <p id="waitInstruction">
+                  When someone begins broadcasting, you will see their name appear below.
+              </p>
                 <!-- <section>
                     <select id="broadcasting-option">
                         <option>Audio + Video</option>
@@ -188,7 +196,7 @@
                         if (typeof roomsList === 'undefined') roomsList = document.body;
 
                         var tr = document.createElement('tr');
-                        tr.innerHTML = '<td><strong>' + room.roomName + '</strong> is broadcasting his media!</td>' +
+                        tr.innerHTML = '<td><strong>' + room.roomName + '</strong> is live! Press Join to listen.</td>' +
                             '<td><button class="join">Join</button></td>';
                         roomsList.appendChild(tr);
 
@@ -209,7 +217,7 @@
                         };
                     },
                     onNewParticipant: function(numberOfViewers) {
-                        document.title = 'Viewers: ' + numberOfViewers;
+                        document.title = 'Listeners: ' + numberOfViewers;
                     },
                     onReady: function() {
                         console.log('now you can open or join rooms');
@@ -403,6 +411,8 @@
                         video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
                     }, 1000);
                 }
+
+                // 'Listeners: ' + numberOfViewers
 
             </script>
         </article>
