@@ -1,45 +1,50 @@
+// https://www.webrtc-experiment.com/
+
+
+//QUESTION: Why do I have socket.io version 3.5.2 when there is only 2.2 online?
+
+
+// TODO: Links
+// https://github.com/muaz-khan/RTCMultiConnection/issues/288
+// https://stackoverflow.com/questions/23946683/socket-io-bad-request-with-response-code0-messagetransport-unknown
+// https://stackoverflow.com/questions/25821389/socket-io-and-node-js-400-bad-request
+
 var fs = require('fs');
 
-var _static = require('node-static');
-var file = new _static.Server('./static', {
-    cache: false
+// don't forget to use your own keys!
+var options = {
+    key: fs.readFileSync('privkey.pem'),
+    cert: fs.readFileSync('cert.pem')
+
+    //TODO: His keys are still here, tell him?
+    // key: fs.readFileSync('/etc/letsencrypt/live/webrtcweb.com/privkey.pem'),
+    // cert: fs.readFileSync('/etc/letsencrypt/live/webrtcweb.com/fullchain.pem')
+};
+
+// HTTPs server
+var app = require('https').createServer(options, function(request, response) {
+    response.writeHead(200, {
+        'Content-Type': 'text/html'
+    });
+    // var link = 'https://github.com/muaz-khan/WebRTC-Experiment/tree/master/socketio-over-nodejs';
+
+    response.write('This is part of SpeakOut');
+    response.end();
 });
 
-/*
-// use this for LIVE domains
-var options = {
-    key: fs.readFileSync('../ssl/private/domain.com.key'),
-    cert: fs.readFileSync('../ssl/certs/domain.com.crt'),
-    ca: fs.readFileSync('../ssl/certs/domain.com.cabundle')
-};
-*/
-var options = {
-  key: fs.readFileSync('privkey.pem'),
-  cert: fs.readFileSync('cert.pem')
-};
 
-var app = require('https').createServer(options, serverCallback);
-
-function serverCallback(request, response) {
-    request.addListener('end', function () {
-        response.setHeader('Access-Control-Allow-Origin', '*');
-        response.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-        response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-        file.serve(request, response);
-    }).resume();
-}
+// socket.io goes below
 
 var io = require('socket.io').listen(app, {
     log: true,
     origins: '*:*'
 });
 
-io.set('transports', [
-    // 'websocket',
-    'xhr-polling',
-    'jsonp-polling'
-]);
+// io.set('transports', [
+//     //'websocket',
+//     'xhr-polling',
+//     'jsonp-polling'
+// ]);
 
 var channels = {};
 
@@ -50,20 +55,27 @@ io.sockets.on('connection', function (socket) {
     }
 
     socket.on('new-channel', function (data) {
+      console.log('new-channel');
         if (!channels[data.channel]) {
             initiatorChannel = data.channel;
+            console.log("really a new channel");
+        } else {
+          console.log("channel exists")
         }
 
         channels[data.channel] = data.channel;
+        console.log(data.channel);
         onNewNamespace(data.channel, data.sender);
     });
 
     socket.on('presence', function (channel) {
+      console.log('presence')
         var isChannelPresent = !! channels[channel];
         socket.emit('presence', isChannelPresent);
     });
 
     socket.on('disconnect', function (channel) {
+      console.log('disconnect');
         if (initiatorChannel) {
             delete channels[initiatorChannel];
         }
@@ -71,6 +83,7 @@ io.sockets.on('connection', function (socket) {
 });
 
 function onNewNamespace(channel, sender) {
+  console.log('onNewNamespace');
     io.of('/' + channel).on('connection', function (socket) {
         var username;
         if (io.isConnected) {
@@ -79,14 +92,18 @@ function onNewNamespace(channel, sender) {
         }
 
         socket.on('message', function (data) {
-            if (data.sender == sender) {
-                if(!username) username = data.data.sender;
+          console.log('message');
+          console.log(data);
+            // if (data.sender == sender) {
+            //     if(!username) username = data.data.sender;
 
                 socket.broadcast.emit('message', data.data);
-            }
+                console.log(data.data);
+            // }
         });
 
         socket.on('disconnect', function() {
+          console.log('disconnect');
             if(username) {
                 socket.broadcast.emit('user-left', username);
                 username = null;
@@ -95,4 +112,12 @@ function onNewNamespace(channel, sender) {
     });
 }
 
+// run app
+
 app.listen(process.env.PORT || 9559);
+
+process.on('unhandledRejection', (reason, promise) => {
+  process.exit(1);
+});
+
+console.log('Please open SSL URL: https://localhost:'+(process.env.PORT || 9559)+'/');
