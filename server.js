@@ -97,21 +97,21 @@ runServer();
 
 //this second server runs on 80 and sends anyone to 443
 // when adding express, need to install the package npm install express
-var express = require('express')
-var httpapp = express()
-
-httpapp.get('/', function (req, res) {
-  res.redirect('https://www.speakout.io/')
-})
-
-httpapp.get('/finishqueensboulevard', function (req, res) {
-  res.redirect('https://www.speakout.io/finishqueensboulevard.html')
-})
-
-httpapp.get('/speak', function (req, res) {
-  res.redirect('https://www.speakout.io/speak.html')
-})
-
-httpapp.listen(80, function () {
-  console.log('I found someone asking for 80, send them to 443')
-})
+// var express = require('express')
+// var httpapp = express()
+//
+// httpapp.get('/', function (req, res) {
+//   res.redirect('https://www.speakout.io/')
+// })
+//
+// httpapp.get('/finishqueensboulevard', function (req, res) {
+//   res.redirect('https://www.speakout.io/finishqueensboulevard.html')
+// })
+//
+// httpapp.get('/speak', function (req, res) {
+//   res.redirect('https://www.speakout.io/speak.html')
+// })
+//
+// httpapp.listen(80, function () {
+//   console.log('I found someone asking for 80, send them to 443')
+// })
