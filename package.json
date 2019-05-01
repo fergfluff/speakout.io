@@ -1,0 +1,32 @@
+{
+  "name": "speakout",
+  "version": "1.0.0",
+  "description": "**Hello**",
+  "main": "server.js",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "fresh": "^0.5.2",
+    "mime": "^2.4.2",
+    "negotiator": "^0.6.2",
+    "node.js": "^0.0.0",
+    "qs": "^6.7.0",
+    "send": "^0.16.2",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fergfluff/speakout.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fergfluff/speakout.io/issues"
+  },
+  "homepage": "https://github.com/fergfluff/speakout.io#readme"
+}
