@@ -12,9 +12,14 @@
     color: rgba(255,255,255,1.0);
 }
 
+.navbar-brand {
+  font-family: 'fatbrushwkbold';
+}
+
+
 /* smaller screens? */
-#attract {
-  margin-top: 25%;
+#attractDiv {
+  margin-top: 8%;
   margin-bottom: 3%;
 
 }
@@ -24,6 +29,13 @@
   font-family: 'fatbrushwkbold';
   text-align: center;
   font-size: 4.5rem;
+}
+
+#subpageLogo
+ {
+  font-family: 'fatbrushwkbold';
+  text-align: center;
+  font-size: 3rem;
 }
 
 #tagline
@@ -40,6 +52,17 @@
 
 #calltoActionButton {
   margin-top: 7%;
+}
+
+.articleDiv {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.instructionText {
+  font-family: century-gothic, sans-serif;
+  text-align: left;
+  font-size: 1.1rem;
 }
 
 /* larger screens?  */
@@ -63,4 +86,55 @@
     /* margin: 3%; */
     margin-top: 2%;
   }
+  #subpageLogo
+   {
+    font-family: 'fatbrushwkbold';
+    text-align: center;
+    font-size: 5rem;
+  }
+}
+
+
+
+/* Muaz Style for Media Players */
+audio, video {
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    vertical-align: top;
+    width: 100%;
+}
+input {
+    border: 1px solid #d9d9d9;
+    border-radius: 1px;
+    font-size: 2em;
+    margin: .2em;
+    width: 30%;
+}
+select {
+    border: 1px solid #d9d9d9;
+    border-radius: 1px;
+    height: 50px;
+    margin-left: 1em;
+    margin-right: -12px;
+    padding: 1.1em;
+    vertical-align: 6px;
+    width: 18%;
+}
+.setup {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 102%;
+    height: 47px;
+    margin-left: -9px;
+    margin-top: 8px;
+    position: absolute;
+}
+p { padding: 1em; }
+li {
+    border-bottom: 1px solid rgb(189, 189, 189);
+    border-left: 1px solid rgb(189, 189, 189);
+    padding: .5em;
 }

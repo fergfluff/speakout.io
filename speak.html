@@ -30,10 +30,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 
-        <link rel="stylesheet" href="/style.css">
+
         <!-- <link rel="stylesheet" href="/muazkhanstyle.css"> -->
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="https://use.typekit.net/lig4qcn.css">
 
 
         <script>
@@ -67,15 +69,13 @@
 
     <body>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <a class="navbar-brand" href="#">SpeakOut</a>
-
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -100,23 +100,34 @@
       </nav>
 
 
-        <article>
-            <header style="text-align: center;">
-                <h1>
-                    Speak
-                </h1>
-            </header>
+        <article class="articleDiv">
+
+          <div id="attractDiv" class="container-fluid">
+            <div class="row justify-content-md-center">
+              <header  style="text-align: center;">
+                  <h1 id="subpageLogo">
+                      Speak
+                  </h1>
+              </header>
+            </div>
+          </div>
+
+          <div  class="container-fluid">
+            <div class="row justify-content-md-center">
+              <header  style="text-align: center;">
+                  <p class="instructionText">Give a public name for your broadcast. This will become the unique URL to give others.</p>
+              </header>
+            </div>
+          </div>
 
 
-            <!-- copy this <section> and next <script> -->
-            <section class="experiment">
-              <p>
-                  Welcome to SpeakOut, where you can amplify speeches at protests.
-              </p>
-              <p id="waitInstruction">
-                  Enter a name so that people can find your speech.
-                  Press Start when you are ready.
-              </p>
+          <label class="instructionText" for="basic-url">Your unique URL</label>
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">https://speakout.io/</span>
+              </div>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
 
 
                 <section>
@@ -130,7 +141,9 @@
                     <!-- Create a Submit Name button that appear right away -->
 
                     <!-- This button becomes the "Start" button, and is hidden at first -->
-                    <button id="setup-new-broadcast" class="setup speakerClass">Start</button>
+                    <!-- <button  class="setup speakerClass">Start</button> -->
+                    <button id="setup-new-broadcast" type="button" class="btn btn-secondary" class="btn-block">Start</button>
+
 
                 </section>
 
@@ -425,7 +438,7 @@
         <!-- <footer>
             <p>
                 <a href="https://www.speakout.io/">speakout.io</a>
-                © <a href="https://www.speakout.io/about" rel="author" target="_blank">Aboutn</a>
+                <a href="https://www.speakout.io/about" rel="author" target="_blank">Aboutn</a>
             </p>
         </footer> -->
 
