@@ -1,12 +1,66 @@
 @font-face {
     font-family: 'fatbrushwkbold';
-    src: url('fonts/fatbrushwk_2-webfont.woff2') format('woff2'),
-         url('fonts/fatbrushwk_2-webfont.woff') format('woff');
+    src: url('fonts/fatbrushwk_2-webfont.woff') format('woff'),
+         url('fonts/fatbrushwk_2-webfont.ttf') format('truetype'),
+         url('fonts/fatbrushwk_2-webfont.woff2') format('woff2');
+
     font-weight: normal;
     font-style: normal;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1.0);
+}
+
+/* smaller screens? */
+#attract {
+  margin-top: 25%;
+  margin-bottom: 3%;
 
 }
 
-html {
-  font-family: "myFont", "Bitstream Vera Serif", serif;
+#homepageLogo
+ {
+  font-family: 'fatbrushwkbold';
+  text-align: center;
+  font-size: 4.5rem;
+}
+
+#tagline
+ {
+  font-family: century-gothic, sans-serif;
+  font-size: 1.3rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#calltoAction {
+  margin-top: 5%;
+}
+
+#calltoActionButton {
+  margin-top: 7%;
+}
+
+/* larger screens?  */
+@media (min-width: 576px) {
+  #attract {
+    margin-top: 6%;
+    margin-bottom: 2%;
+  }
+  #homepageLogo {
+    font-size: 9rem;
+  }
+  #tagline {
+    font-family: century-gothic, sans-serif;
+    font-size: 1.5rem;
+    margin-top: -1%;
+  }
+  #calltoAction {
+    margin-top: 4%;
+  }
+  #calltoActionButton {
+    /* margin: 3%; */
+    margin-top: 2%;
+  }
 }

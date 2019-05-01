@@ -1,17 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <!-- Muaz Khan's viewport code -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
     <!-- Bootstrap's viewport code -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- <link rel="stylesheet" href="/muazkhanstyle.css"> -->
-    <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Always put your own style.css after any other referenced .css sheets -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/lig4qcn.css">
 
 
     <title>SpeakOut</title>
@@ -19,7 +22,10 @@
   <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+        <!-- <nav class="navbar navbar-dark bg-primary"> -->
 
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,12 +38,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="speak.html">Speak</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="finishqueensboulevard.html">Listen</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="decisionrights.html">Your Decision Rights</a>
           </li>
@@ -52,23 +58,45 @@
     </nav>
 
 
-
-
-
-
-    <h1 class="text-center">SpeakOut</h1>
-
-    <p class="text-center">A protest tool for broadcasting speeches</p>
-
-    <div class="container">
+    <div id="attract" class="container-fluid">
       <div class="row justify-content-md-center">
-        <!-- on a small screen, buttons are 100%, on a md screen 4/12, 1/3, or 33% of the screen, on a lg screen 2/12, 1/6 or 16% -->
-        <div class="col-md-4 col-lg-2">
-          <a class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="/speak.html" role="button">Speak</a>
-          <a class="btn btn-secondary btn-lg btn-block" class="mobileButton"href="/finishqueensboulevard.html" role="button">Listen</a>
+        <h1 id="homepageLogo" class="text-center">SpeakOut</h1>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <p id="tagline" class="text-center">A protest tool for broadcasting speeches.</p>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div>
+        <div class="row justify-content-md-center">
+          <p id="tagline" class="text-center">Built with some privacy considerations. You can add more.</p>
         </div>
       </div>
     </div>
+
+    <div id="calltoAction" class="container-fluid">
+      <div class="container-fluid">
+        <div id="calltoActionButton" class="row justify-content-md-center">
+          <div class="col-md-4 col-lg-4">
+            <a class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="/speak.html" role="button">Speak</a>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="calltoActionButton" class="row justify-content-md-center">
+          <div class="col-md-4 col-lg-4">
+            <a class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="/finishqueensboulevard.html" role="button">Listen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
 
 
 
