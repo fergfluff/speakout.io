@@ -30,10 +30,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 
-        <link rel="stylesheet" href="/style.css">
         <!-- <link rel="stylesheet" href="/muazkhanstyle.css"> -->
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css">
 
 
         <script>
@@ -109,41 +109,29 @@
 
 
             <!-- copy this <section> and next <script> -->
+
+
+
             <section class="experiment">
-              <p>
-                  Welcome to SpeakOut, where you can amplify speeches at protests.
-              </p>
-              <p id="waitInstruction">
-                  Enter a name so that people can find your speech.
-                  Press Start when you are ready.
-              </p>
-
-
                 <section>
-                    <select id="broadcasting-option">
-                        <option>Audio + Video</option>
-                        <option>Only Audio</option>
-                        <option>Screen</option>
-                    </select>
-                    <input type="text" id="broadcast-name" class="speakerClass">
-
-                    <!-- Create a Submit Name button that appear right away -->
-
-                    <!-- This button becomes the "Start" button, and is hidden at first -->
-                    <button id="setup-new-broadcast" class="setup speakerClass">Start</button>
-
+                  <select id="broadcasting-option">
+                      <option>Audio + Video</option>
+                      <option>Only Audio</option>
+                      <option>Screen</option>
+                  </select>
+                  <input type="text" id="broadcast-name">
+                  <button id="setup-new-broadcast" class="setup">Setup New Broadcast</button>
                 </section>
-
                 <!-- list of all available broadcasting rooms -->
                 <table style="width: 100%;" id="rooms-list"></table>
-
                 <!-- local/remote videos container -->
                 <div id="videos-container"></div>
+              </section>
 
-                <!-- <p>
-                    If you might have denied access to your microphone, and you are using Chrome, please tap <a href="chrome://settings/content/microphone">here</a> to go to your browser settings, look under Blocked, and remove speakout.io.
-                </p> -->
-            </section>
+
+
+
+
 
             <script>
                 // Muaz Khan     - https://github.com/muaz-khan

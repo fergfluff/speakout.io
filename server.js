@@ -74,8 +74,10 @@ let options = {
   // cert: fs.readFileSync('my-cert.pem')
   // key: fs.readFileSync('/etc/letsencrypt/live/www.speakout.io/privkey.pem'),
   // cert: fs.readFileSync('/etc/letsencrypt/live/www.speakout.io/fullchain.pem')
-  key: fs.readFileSync('privkey.pem'),
-  cert: fs.readFileSync('cert.pem')
+  // key: fs.readFileSync('privkey.pem'),
+  // cert: fs.readFileSync('cert.pem')
+  key: fs.readFileSync('/etc/letsencrypt/live/staging.speakout.io/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/staging.speakout.io/cert.pem')
 
 };
 
