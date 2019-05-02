@@ -8,12 +8,21 @@
     font-style: normal;
 }
 
-.navbar-dark .navbar-nav .nav-link {
+.navbar-dark .navbar-nav .nav-link .active {
     color: rgba(255,255,255,1.0);
 }
 
 .navbar-brand {
   font-family: 'fatbrushwkbold';
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #007bff;
+    background-color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    color: #007bff;
 }
 
 /* smaller screens? */
@@ -174,7 +183,7 @@ ul {
     list-style: none;
 }
 
-li:before {
+.infoList:before {
     content: "+";
     margin-right: 4px;
 }

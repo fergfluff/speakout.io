@@ -15,45 +15,48 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="https://use.typekit.net/lig4qcn.css">
 
+    <link rel="icon"
+      type="image/png"
+      href="iconSpeakOut.png">
+
     <title>SpeakOut</title>
   </head>
   <body>
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-      <!-- <a class="navbar-brand" href="#">SpeakOut</a> -->
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">SpeakOut</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-
-          <!-- <li class="nav-item">
+        <ul class="navbar-nav mr-auto nav nav-pills">
+          <li class="nav-item ">
             <a class="nav-link" href="speak.html">Speak</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="finishqueensboulevard.html">Listen</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="decisionrights.html">Your Decision Rights</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link active" href="decisionrights.html">Data Decision Rights</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
           </li>
-
-
         </ul>
-
       </div>
     </nav>
 
 
-    <div id="attractDiv" class="container-fluid">
-      <div class="row justify-content-md-center">
-        <h1 id="homepageLogo" class="text-center">Your Decision Rights</h1>
+    <div id="firstListenerPage" class="container-fluid">
+      <div id="attractDiv" class="container-fluid">
+        <div class="row justify-content-md-center">
+          <header  style="text-align: center;">
+              <h2 id="subpageLogo">
+                  Data Decision Rights
+              </h2>
+          </header>
+        </div>
       </div>
-    </div>
 
     <div class="container-fluid">
       <div class="row justify-content-md-center">
@@ -76,10 +79,11 @@
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body">
                 <ul>
-                  <li>Does not take your phone number, email address, or ask for username and password.</li>
-                  <li>Does not use <a style="text-decoration: underline" href='https://www.eff.org/issues/do-not-track'>cookies or trackers</a>.</li>
-                  <li>Uses HTTPS which is safer than HTTP, but the <a style="text-decoration: underline" href='https://ssd.eff.org/en/module/why-metadata-matters'>metadata</a> (the who, when, and sometimes where of your visit) can be detected by others. HTTPS does protect the contents of your visit.</li>
-                  <li>Uses WebRTC, the open standard for live web communication, which as of now can <a style="text-decoration: underline" href='https://www.article19.org/resources/privacy-and-consent-in-the-age-of-browsers-the-question-of-webrtc/'>still reveal</a> <a style="text-decoration: underline" href='https://www.w3.org/TR/webrtc/#revealing-ip-addresses'>possibly private</a> IP addresses.</li>
+                  <li class="infoList">Does not take your phone number, email address, or ask for username and password.</li>
+                  <li class="infoList">Does not use <a style="text-decoration: underline" href='https://www.eff.org/issues/do-not-track'>cookies or trackers</a>.</li>
+                  <li class="infoList">Uses HTTPS which is safer than HTTP, but the <a style="text-decoration: underline" href='https://ssd.eff.org/en/module/why-metadata-matters'>metadata</a> (the who, when, and sometimes where of your visit) can be detected by others. HTTPS does protect the contents of your visit.</li>
+                  <li class="infoList">Uses WebRTC, the open standard for live web communication, which as of now can <a style="text-decoration: underline" href='https://www.article19.org/resources/privacy-and-consent-in-the-age-of-browsers-the-question-of-webrtc/'>still reveal</a> <a style="text-decoration: underline" href='https://www.w3.org/TR/webrtc/#revealing-ip-addresses'>possibly private</a> IP addresses.</li>
+                  <li class="infoList">Is built by real person, not a large corporation.</li>
                 </ul>
               </div>
             </div>
@@ -96,11 +100,11 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card-body">
                 <ul>
-                  <li>Add reliability with a data hotspot, although this will ping cell towers.</li>
-                  <li>Use a private wifi router to serve SpeakOut’s webpages, requiring no cell data or public wifi, although there is still no way to control your phone’s pings to cell towers, StringRays (cell site simulators) in <a style="text-decoration: underline" href='https://www.nbcnewyork.com/news/local/Does-NYPDs-Cellphone-Sweeping-StingRay-Technology-Go-Too-Far---459937973.html'>New York City</a> and the <a style="text-decoration: underline" href='https://www.aclu.org/issues/privacy-technology/surveillance-technologies/stingray-tracking-devices-whos-got-them'>U.S.</a>.</li>
-                  <li>Use handheld bluetooth speakers to listen instead of people’s personal phones, although this will bleed into <a style="text-decoration: underline" href='https://www.nyclu.org/en/know-your-rights-demonstrating-new-york-city-0'>sound permit issues</a> in New York City.</li>
-                  <li>Use the <a style="text-decoration: underline" href='https://en.wikipedia.org/wiki/Human_microphone'>sound permit issues</a>, electric megaphone, or sound system.</li>
-                  <li>Host your own version of SpeakOut, found on Github <a style="text-decoration: underline" href='https://github.com/fergfluff/speakout.io'>here</a>. Use your own own servers and add additional privacy modifications.</li>
+                  <li class="infoList">Add reliability with a data hotspot, although this will ping cell towers.</li>
+                  <li class="infoList">Use a private wifi router to serve SpeakOut’s webpages, requiring no cell data or public wifi, although there is still no way to control your phone’s pings to cell towers or StringRays (cell site simulators) in <a style="text-decoration: underline" href='https://www.nbcnewyork.com/news/local/Does-NYPDs-Cellphone-Sweeping-StingRay-Technology-Go-Too-Far---459937973.html'>New York City</a> and the <a style="text-decoration: underline" href='https://www.aclu.org/issues/privacy-technology/surveillance-technologies/stingray-tracking-devices-whos-got-them'>U.S.</a>.</li>
+                  <li class="infoList">Use handheld bluetooth speakers to listen instead of people’s personal phones, although this will bleed into <a style="text-decoration: underline" href='https://www.nyclu.org/en/know-your-rights-demonstrating-new-york-city-0'>sound permit issues</a> in New York City.</li>
+                  <li class="infoList">Use the <a style="text-decoration: underline" href='https://en.wikipedia.org/wiki/Human_microphone'>Human Microphone</a>, electric megaphone, or sound system instead.</li>
+                  <li class="infoList">Host your own version of SpeakOut, found on Github <a style="text-decoration: underline" href='https://github.com/fergfluff/speakout.io'>here</a>. Use your own own servers and add additional privacy modifications.</li>
                 </ul>
               </div>
             </div>
@@ -117,9 +121,9 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="card-body">
                 <ul>
-                  <li><a style="text-decoration: underline" href='https://ssd.eff.org/en/module/attending-protest'>Tips</a> on digital security before protesting from The Electronic Frontier Foundation.</li>
-                  <li><a style="text-decoration: underline" href='https://freedom.press/training/mobile-security-for-activists-and-journalists/'>What to do</a> if your phone is confiscated by the police from The Freedom of the Press Foundation.</li>
-                  <li>Read The New York Times' <a style="text-decoration: underline" href='https://www.nytimes.com/interactive/2019/opinion/internet-privacy-project.html'>Privacy Project</a></li>
+                  <li class="infoList"><a style="text-decoration: underline" href='https://ssd.eff.org/en/module/attending-protest'>Tips</a> on digital security before protesting from The Electronic Frontier Foundation.</li>
+                  <li class="infoList"><a style="text-decoration: underline" href='https://freedom.press/training/mobile-security-for-activists-and-journalists/'>What to do</a> if your phone is confiscated by the police from The Freedom of the Press Foundation.</li>
+                  <li class="infoList">Read The New York Times' <a style="text-decoration: underline" href='https://www.nytimes.com/interactive/2019/opinion/internet-privacy-project.html'>Privacy Project</a>.</li>
                 </ul>
               </div>
             </div>

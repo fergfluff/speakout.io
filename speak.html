@@ -34,6 +34,9 @@
         <!-- Adobe font -->
         <link rel="stylesheet" href="https://use.typekit.net/lig4qcn.css">
 
+        <link rel="icon"
+          type="image/png"
+          href="iconSpeakOut.png">
 
         <script>
             document.createElement('article');
@@ -64,40 +67,37 @@
 
 <!-- NAVIGATION -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">SpeakOut</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav nav-pills">
+              <li class="nav-item  active">
+                <a class="nav-link active" href="speak.html">Speak</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="finishqueensboulevard.html">Listen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="decisionrights.html">Data Decision Rights</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <a class="navbar-brand" href="#">SpeakOut</a>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item">
-              <a class="nav-link" href="speak.html">Speak</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="finishqueensboulevard.html">Listen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="decisionrights.html">Your Decision Rights</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
 
 <!-- FIRST SPEAKER PAGE -->
       <div id="firstSpeakerPage" class="container-fluid">
         <div id="attractDiv" class="container-fluid">
           <div class="row justify-content-md-center">
             <header  style="text-align: center;">
-                <h1 id="subpageLogo">
+                <h2 id="subpageLogo">
                     Speak
-                </h1>
+                </h2>
             </header>
           </div>
         </div>
@@ -208,18 +208,8 @@
           </div>
         </div>
 
-        <div id="calltoAction" class="container-fluid">
-          <div class="container-fluid">
-            <div id="calltoActionButton" class="row justify-content-md-center">
-              <div class="col-md-4 col-lg-4">
-                <button id="nextSpeakerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block" href="/index.html">Leave Broadcast</button>
-              </div>
-            </div>
-          </div>
-        </div>
 
-
-<!-- OLD BROADCASTING PAGE -->
+<!-- OLD DROP DOWN FIELD AND BUTTON -->
           <section>
             <select id="broadcasting-option">
                 <option>Audio + Video</option>
@@ -229,7 +219,8 @@
 
             <input type="text" id="broadcast-name" class="speakerClass">
 
-            <div class="dropdown">
+            <!-- NEW DROP DOWN FIELD AND BUTTON  -->
+            <!-- <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Media Type
               </button>
@@ -246,13 +237,13 @@
                   <span class="input-group-text" id="basic-addon3">https://speakout.io/</span>
                 </div>
               <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-            </div>
+            </div> -->
 
             <!-- Create a Submit Name button that appearS right away -->
 
             <!-- This button becomes the "Start" button, and is hidden at first -->
             <!-- <button  class="setup speakerClass">Start</button> -->
-            <div id="calltoAction" class="container-fluid">
+            <!-- <div id="calltoAction" class="container-fluid">
               <div class="container-fluid">
                 <div id="calltoActionButton" class="row justify-content-md-center">
                   <div class="col-md-4 col-lg-4">
@@ -261,7 +252,7 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
 
 
         <!-- list of all available broadcasting rooms -->
@@ -273,6 +264,16 @@
         <!-- <p>
             If you might have denied access to your microphone, and you are using Chrome, please tap <a href="chrome://settings/content/microphone">here</a> to go to your browser settings, look under Blocked, and remove speakout.io.
         </p> -->
+
+        <div id="calltoAction" class="container-fluid">
+          <div class="container-fluid">
+            <div id="calltoActionButton" class="row justify-content-md-center">
+              <div class="col-md-4 col-lg-4">
+                <button id="nextSpeakerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block" href="/index.html">Leave Broadcast</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </section>
 
@@ -577,12 +578,12 @@
         </script>
 
 
-        <!-- <footer>
+        <footer>
             <p>
                 <a href="https://www.speakout.io/">speakout.io</a>
                 <a href="https://www.speakout.io/about" rel="author" target="_blank">Aboutn</a>
             </p>
-        </footer> -->
+        </footer>
 
 
     </body>
