@@ -74,8 +74,9 @@ let options = {
   // cert: fs.readFileSync('my-cert.pem')
   // key: fs.readFileSync('/etc/letsencrypt/live/www.speakout.io/privkey.pem'),
   // cert: fs.readFileSync('/etc/letsencrypt/live/www.speakout.io/fullchain.pem')
-  key: fs.readFileSync('privkey.pem'),
-  cert: fs.readFileSync('cert.pem')
+  key: fs.readFileSync('/etc/letsencrypt/live/staging.speakout.io/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/staging.speakout.io/cert.pem')
+
 
 };
 
@@ -95,7 +96,7 @@ function runServer() {
 
 runServer();
 
-//this second server runs on 80 and sends anyone to 443
+// this second server runs on 80 and sends anyone to 443
 // when adding express, need to install the package npm install express
 // var express = require('express')
 // var httpapp = express()
