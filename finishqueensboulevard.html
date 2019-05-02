@@ -27,11 +27,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        <link rel="author" type="text/html" href="https://www.elizabethjeaneferguson.com/">
         <meta name="author" content="Elizabeth Ferguson">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-        <link rel="stylesheet" href="/style.css">
         <!-- <link rel="stylesheet" href="/muazkhanstyle.css"> -->
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <!-- Adobe font -->
+        <link rel="stylesheet" href="https://use.typekit.net/lig4qcn.css">
 
         <script>
             document.createElement('article');
@@ -44,14 +45,10 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
         <!-- Local copies of this code are saved on my machine  -->
-
         <!-- This Library is used to detect WebRTC features -->
         <!-- Local copies of this code are saved on my machine  -->
         <script src="https://cdn.webrtc-experiment.com/DetectRTC.js"></script>
-
         <!-- My updated socket.io copy -->
         <script src="/socket.io.js"> </script>
         <!-- Muaz Khan's hosted socket.io copy -->
@@ -62,25 +59,20 @@
         <script src="https://cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js"> </script>
         <script src="broadcast.js"> </script>
 
-
-
     </head>
 
     <body>
 
+<!-- NAVIGATION -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <a class="navbar-brand" href="#">SpeakOut</a>
 
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-
             <li class="nav-item">
               <a class="nav-link" href="speak.html">Speak</a>
             </li>
@@ -93,32 +85,87 @@
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
-
-
           </ul>
-
         </div>
       </nav>
 
-
         <article>
-            <header style="text-align: center;">
-                <h1>
-                    Listen
-                </h1>
 
-            </header>
+<!-- FIRST SPEAKER PAGE -->
+            <div id="firstListenerPage" class="container-fluid">
+              <div id="attractDiv" class="container-fluid">
+                <div class="row justify-content-md-center">
+                  <header  style="text-align: center;">
+                      <h1 id="subpageLogo">
+                          Listen
+                      </h1>
+                  </header>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="row justify-content-md-center">
+                  <header style="text-align: center;">
+                    <p class="instructionText">
+                      Decide how and when to use SpeakOut. To learn what data protections you can add yourself, go <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
+                    </p>
+                  </header>
+                </div>
+              </div>
+
+              <div id="calltoAction" class="container-fluid">
+                <div class="container-fluid">
+                  <div id="calltoActionButton" class="row justify-content-md-center">
+                    <div class="col-md-4 col-lg-4">
+                      <button id="nextListenerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
+<!-- SECOND SPEAKER PAGE -->
             <!-- copy this <section> and next <script> -->
-            <section class="experiment">
+            <section id="secondListenerPage" class="experiment">
 
-              <p>
-                  Welcome to SpeakOut, where you can amplify and listen to live protest speeches.
-              </p>
-              <p id="waitInstruction">
-                  When someone begins broadcasting, you will see their name appear below.
-              </p>
+              <div id="secondListenerPage" class="container-fluid">
+                <div id="attractDiv" class="container-fluid">
+                  <div class="row justify-content-md-center">
+                    <header  style="text-align: center;">
+                        <h1 id="subpageLogo">
+                            Listen
+                        </h1>
+                    </header>
+                  </div>
+                </div>
+
+                <div class="container-fluid">
+                  <div class="row justify-content-md-center">
+                    <header style="text-align: center;">
+                      <p class="instructionText">
+                        Welcome to ______’s broadcast!
+                      </p>
+                      <p class="instructionText">
+                        Use your phone’s speakers or headphones to listen.
+                      </p>
+                      <p class="instructionText">
+                        You may not need to use SpeakOut if you’re near the speaker, as the audio might be distracting.
+                      </p>
+                    </header>
+                  </div>
+                </div>
+
+                <div id="calltoAction" class="container-fluid">
+                  <div class="container-fluid">
+                    <div id="calltoActionButton" class="row justify-content-md-center">
+                      <div class="col-md-4 col-lg-4">
+                        <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
                 <!-- <section>
                     <select id="broadcasting-option">
                         <option>Audio + Video</option>
@@ -133,6 +180,19 @@
                     <!-- <button id="setup-new-broadcast" class="setup speakerClass">Start Broadcast</button> -->
 
                 <!-- </section> -->
+
+
+
+              <div id="thirdListenerPage" class="container-fluid">
+                <div id="attractDiv" class="container-fluid">
+                  <div class="row justify-content-md-center">
+                    <header  style="text-align: center;">
+                        <h1 id="subpageLogo">
+                            Third Listener Page
+                        </h1>
+                    </header>
+                  </div>
+                </div>
 
                 <!-- list of all available broadcasting rooms -->
                 <table style="width: 100%;" id="rooms-list"></table>
@@ -415,6 +475,27 @@
 
             </script>
         </article>
+
+        <script>
+
+          let firstListenerPage = document.getElementById("firstListenerPage");
+          let secondListenerPage = document.getElementById("secondListenerPage");
+          let thirdListenerPage = document.getElementById("thirdListenerPage");
+
+          let nextListenerButton = document.getElementById("nextListenerButton");
+          let joinBroadcastButton = document.getElementById("joinBroadcastButton");
+
+          nextListenerButton.addEventListener("click", function () {
+            firstListenerPage.style.display = 'none';
+            secondListenerPage.style.display = 'block';
+          });
+
+          joinBroadcastButton.addEventListener("click", function () {
+            secondListenerPage.style.display = 'none';
+            thirdListenerPage.style.display = 'block';
+          });
+
+        </script>
 
 
         <!-- <footer>

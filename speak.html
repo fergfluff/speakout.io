@@ -6,7 +6,6 @@
 -->
 
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,13 +27,11 @@
         <link rel="author" type="text/html" href="https://www.elizabethjeaneferguson.com/">
         <meta name="author" content="Elizabeth Ferguson">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-
-
         <!-- <link rel="stylesheet" href="/muazkhanstyle.css"> -->
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css" type="text/css">
+        <!-- Adobe font -->
         <link rel="stylesheet" href="https://use.typekit.net/lig4qcn.css">
 
 
@@ -49,11 +46,8 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
         <!-- This Library is used to detect WebRTC features -->
         <script src="https://cdn.webrtc-experiment.com/DetectRTC.js"></script>
-
         <!-- My updated socket.io copy -->
         <script src="socket.io.js"> </script>
         <!-- Muaz Khan's hosted socket.io copy -->
@@ -64,11 +58,11 @@
         <script src="https://cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js"> </script>
         <script src="broadcast.js"> </script>
 
-
     </head>
 
     <body>
 
+<!-- NAVIGATION -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,72 +86,199 @@
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
-
-
           </ul>
-
         </div>
       </nav>
 
-
-        <article class="articleDiv">
-
-          <div id="attractDiv" class="container-fluid">
-            <div class="row justify-content-md-center">
-              <header  style="text-align: center;">
-                  <h1 id="subpageLogo">
-                      Speak
-                  </h1>
-              </header>
-            </div>
+<!-- FIRST SPEAKER PAGE -->
+      <div id="firstSpeakerPage" class="container-fluid">
+        <div id="attractDiv" class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header  style="text-align: center;">
+                <h1 id="subpageLogo">
+                    Speak
+                </h1>
+            </header>
           </div>
+        </div>
 
-          <div  class="container-fluid">
-            <div class="row justify-content-md-center">
-              <header  style="text-align: center;">
-                  <p class="instructionText">Give a public name for your broadcast. This will become the unique URL to give others.</p>
-              </header>
-            </div>
+        <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header style="text-align: center;">
+              <p class="instructionText">
+                Decide how and when to use SpeakOut. To learn what data protections you can add yourself, go <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
+              </p>
+            </header>
           </div>
+        </div>
 
-
-          <label class="instructionText" for="basic-url">Your unique URL</label>
-          <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">https://speakout.io/</span>
+        <div id="calltoAction" class="container-fluid">
+          <div class="container-fluid">
+            <div id="calltoActionButton" class="row justify-content-md-center">
+              <div class="col-md-4 col-lg-4">
+                <button id="nextSpeakerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Next</button>
               </div>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
           </div>
+        </div>
+      </div>
+
+<!-- SECOND SPEAKER PAGE -->
+      <div id="secondSpeakerPage" class="container-fluid">
+        <div id="attractDiv" class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header  style="text-align: center;">
+                <h1 id="subpageLogo">
+                    Speak
+                </h1>
+            </header>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header style="text-align: center;">
+                <p class="instructionText">Give a public name for your broadcast. This will become the unique URL to give others.</p>
+            </header>
+          </div>
+        </div>
+
+        <label class="instructionText" for="basic-url">Your unique URL</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">https://speakout.io/</span>
+            </div>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+
+        <div id="calltoAction" class="container-fluid">
+          <div class="container-fluid">
+            <div id="calltoActionButton" class="row justify-content-md-center">
+              <div class="col-md-4 col-lg-4">
+                <button id="goLiveButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Go Live!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-                <section>
-                    <select id="broadcasting-option">
-                        <option>Audio + Video</option>
-                        <option>Only Audio</option>
-                        <option>Screen</option>
-                    </select>
-                    <input type="text" id="broadcast-name" class="speakerClass">
+<!-- THIRD SPEAKER PAGE -->
+      <section id="thirdSpeakerPage">
 
-                    <!-- Create a Submit Name button that appear right away -->
+        <div id="attractDiv" class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header  style="text-align: center;">
+                <h1 id="subpageLogo">
+                    Speak
+                </h1>
+            </header>
+          </div>
+        </div>
 
-                    <!-- This button becomes the "Start" button, and is hidden at first -->
-                    <!-- <button  class="setup speakerClass">Start</button> -->
-                    <button id="setup-new-broadcast" type="button" class="btn btn-secondary" class="btn-block">Start</button>
+        <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header style="text-align: center;">
+                <p class="instructionText">You’re broadcasting live!</p>
+                <p class="instructionText">Use the media player to pause or mute.</p>
+            </header>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header style="text-align: center;">
+                <p class="instructionText">Media Player</p>
+            </header>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header style="text-align: center;">
+                <p class="instructionText"># of Listeners</p>
+            </header>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <header style="text-align: center;">
+                <p class="instructionText">Unique URL Here</p>
+            </header>
+          </div>
+        </div>
+
+        <div id="calltoAction" class="container-fluid">
+          <div class="container-fluid">
+            <div id="calltoActionButton" class="row justify-content-md-center">
+              <div class="col-md-4 col-lg-4">
+                <button id="nextSpeakerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block" href="/index.html">Leave Broadcast</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
-                </section>
+<!-- OLD BROADCASTING PAGE -->
+          <section>
+            <select id="broadcasting-option">
+                <option>Audio + Video</option>
+                <option>Only Audio</option>
+                <option>Screen</option>
+            </select>
 
-                <!-- list of all available broadcasting rooms -->
-                <table style="width: 100%;" id="rooms-list"></table>
+            <input type="text" id="broadcast-name" class="speakerClass">
 
-                <!-- local/remote videos container -->
-                <div id="videos-container"></div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Media Type
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <option class="dropdown-item">Audio + Video</option>
+                <option class="dropdown-item">Only Audio</option>
+                <option class="dropdown-item">Screen</option>
+              </div>
+            </div>
 
-                <!-- <p>
-                    If you might have denied access to your microphone, and you are using Chrome, please tap <a href="chrome://settings/content/microphone">here</a> to go to your browser settings, look under Blocked, and remove speakout.io.
-                </p> -->
-            </section>
+            <label class="instructionText" for="basic-url">Your unique URL</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">https://speakout.io/</span>
+                </div>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
 
+            <!-- Create a Submit Name button that appearS right away -->
+
+            <!-- This button becomes the "Start" button, and is hidden at first -->
+            <!-- <button  class="setup speakerClass">Start</button> -->
+            <div id="calltoAction" class="container-fluid">
+              <div class="container-fluid">
+                <div id="calltoActionButton" class="row justify-content-md-center">
+                  <div class="col-md-4 col-lg-4">
+                    <button id="setup-new-broadcast" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Go Live 2</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+        <!-- list of all available broadcasting rooms -->
+        <table style="width: 100%;" id="rooms-list"></table>
+
+        <!-- local/remote videos container -->
+        <div id="videos-container"></div>
+
+        <!-- <p>
+            If you might have denied access to your microphone, and you are using Chrome, please tap <a href="chrome://settings/content/microphone">here</a> to go to your browser settings, look under Blocked, and remove speakout.io.
+        </p> -->
+
+      </section>
+
+
+
+<!-- SCRIPT -->
             <script>
                 // Muaz Khan     - https://github.com/muaz-khan
                 // MIT License   - https://www.webrtc-experiment.com/licence/
@@ -433,6 +554,27 @@
 
             </script>
         </article>
+
+        <script>
+
+          let firstSpeakerPage = document.getElementById("firstSpeakerPage");
+          let secondSpeakerPage = document.getElementById("secondSpeakerPage");
+          let thirdSpeakerPage = document.getElementById("thirdSpeakerPage");
+
+          let nextSpeakerButton = document.getElementById("nextSpeakerButton");
+          let goLiveButton = document.getElementById("goLiveButton");
+
+          nextSpeakerButton.addEventListener("click", function () {
+            firstSpeakerPage.style.display = 'none';
+            secondSpeakerPage.style.display = 'block';
+          });
+
+          goLiveButton.addEventListener("click", function () {
+            secondSpeakerPage.style.display = 'none';
+            thirdSpeakerPage.style.display = 'block';
+          });
+
+        </script>
 
 
         <!-- <footer>

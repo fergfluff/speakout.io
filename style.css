@@ -16,7 +16,6 @@
   font-family: 'fatbrushwkbold';
 }
 
-
 /* smaller screens? */
 #attractDiv {
   margin-top: 8%;
@@ -64,6 +63,38 @@
   text-align: left;
   font-size: 1.1rem;
 }
+
+
+#firstSpeakerPage  {
+  display: block;
+}
+
+#secondSpeakerPage {
+  display: none;
+}
+
+#thirdSpeakerPage {
+display: none;
+}
+
+#firstListenerPage  {
+  display: block;
+}
+
+#secondListenerPage {
+  display: none;
+}
+
+#thirdListenerPage {
+display: none;
+}
+
+
+
+
+
+
+
 
 /* larger screens?  */
 @media (min-width: 576px) {
@@ -133,8 +164,17 @@ select {
     position: absolute;
 }
 p { padding: 1em; }
-li {
+/* li {
     border-bottom: 1px solid rgb(189, 189, 189);
     border-left: 1px solid rgb(189, 189, 189);
     padding: .5em;
+} */
+
+ul {
+    list-style: none;
+}
+
+li:before {
+    content: "+";
+    margin-right: 4px;
 }
