@@ -246,6 +246,7 @@
         },
 
         onRemoteStream: function(htmlElement) {
+          console.log("onRemoteStream");
           videosContainer.appendChild(htmlElement);
           rotateInCircle(htmlElement);
         },
@@ -267,6 +268,7 @@
           var joinRoomButton = tr.querySelector('.join');
           joinRoomButton.setAttribute('data-broadcaster', room.broadcaster);
           joinRoomButton.setAttribute('data-roomToken', room.broadcaster);
+
           joinRoomButton.onclick = function() {
             console.log("joinRoomButton clicked");
             this.disabled = true;
@@ -289,6 +291,7 @@
       };
 
       function setupNewBroadcastButtonClickHandler() {
+        console.log("setupNewBroadcastButtonClickHandler");
         document.getElementById('broadcast-name').disabled = true;
         document.getElementById('setup-new-broadcast').style.visibility = "hidden";
 
@@ -364,9 +367,11 @@
         var mediaConfig = {
           video: htmlElement,
           onsuccess: function(stream) {
+            console.log("onsuccess");
             config.attachStream = stream;
 
             videosContainer.appendChild(htmlElement);
+            console.log("videosContainer.appendChild");
             rotateInCircle(htmlElement);
 
             callback && callback();

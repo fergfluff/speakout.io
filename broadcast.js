@@ -26,7 +26,7 @@ var broadcast = function(config) {
   }
 
   function onDefaultSocketResponse(response) {
-    console.log("receicevd socket " + response);
+    console.log("received socket " + response);
     if (response.userToken == self.userToken) return;
 
     if (isGetNewRoom && response.roomToken && response.broadcaster) config.onRoomFound(response);
@@ -86,6 +86,7 @@ var broadcast = function(config) {
         });
       },
       onRemoteStream: function(stream) {
+        console.log("onRemoteStream");
         if (!stream) return;
 
         try {
