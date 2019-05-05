@@ -23,4 +23,5 @@ This is a beta version. Check the Issues above to see what needs to be fixed bef
 I’m interested in collaborating! This can look like working together on the design and back-end of SpeakOut and similar projects. I’m also open to testing SpeakOut in new demonstrations contexts. You can find my contact information on my website. 
 
 Contact: https://www.elizabethjeaneferguson.com/about
+
 More info: https://www.elizabethjeaneferguson.com/speakout
