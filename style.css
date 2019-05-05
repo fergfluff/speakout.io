@@ -59,7 +59,7 @@
 }
 
 .calltoAction {
-  margin-top: 5%;
+  margin-top: 10%;
   margin-bottom: 13%;
   text-align: center;
 }
@@ -177,13 +177,21 @@ ul {
     margin-top: -1%;
   }
   .calltoAction {
-    margin-top: 4%;
+    margin-bottom: 4%;
     padding-left: 15%;
     padding-right: 15%;
   }
   .calltoActionButton {
     /* margin: 3%; */
     margin-top: 2%;
+  }
+
+  #speakButton {
+    margin-top: -5%;
+  }
+
+  #listenButton {
+    margin-top: -5%;
   }
   .subpageLogo
    {
