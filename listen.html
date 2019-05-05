@@ -30,11 +30,14 @@
     <a class="navbar-brand" href="index.html">SpeakOut</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto nav nav-pills">
-        <li class="nav-item ">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="speak.html">Speak</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link active" href="finishqueensboulevard.html">Listen</a>
+          <a class="nav-link active" href="finishqueensboulevard.html">Finish Queens Boulevard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="decisionrights.html">Data Decision Rights</a>
@@ -47,39 +50,60 @@
   </nav>
 
   <div class="container-fluid">
-    <div id="attractDiv" class="container-fluid">
+
+    <div class="attractDiv">
+      <!-- <h1 id="homepageLogo" class="text-center">SpeakOut</h1> -->
+      <h2 class="subpageLogo">
+              Listen
+          </h2>
+    </div>
+
+    <div>
       <div class="row justify-content-md-center">
         <header style="text-align: center;">
-          <h2 id="subpageLogo">
-                  Listen
-              </h2>
+          <p class="instructionText">
+            Uh oh! For now, you need a unique URL to access and listen to a broadcast.
+          </p>
+          <p class="instructionText">
+            Ask the person broadcasting, an organizer or someone else who might have the URL.
+          </p>
+          <!-- <p class="instructionText">
+            Hint: For testing purposes, you can now click on "Finish Queens Boulevard" in the menu above to listen if someone has started a broadcast.
+          </p> -->
         </header>
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row justify-content-md-center">
-        <header style="text-align: center;">
-          <p class="instructionText">
-            Uh oh! You need a unique URL to listen to a broadcast.
-          </p>
-          <p class="instructionText">
-            Ask the organizer or someone else who might have the URL.
-          </p>
-        </header>
-      </div>
-    </div>
-
-    <div id="calltoAction" class="container-fluid">
-      <div class="container-fluid">
-        <div id="calltoActionButton" class="row justify-content-md-center">
-          <div class="col-md-4 col-lg-4">
-            <button id="nextSpeakerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block" href="/index.html">Back to Home</button>
-          </div>
+    <div class="calltoAction">
+      <div id="goHomeListenPageDiv" id="calltoActionButton" class="row justify-content-md-center">
+        <div class="col-md-4 col-lg-4">
+          <a class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Go Home</a>
         </div>
       </div>
     </div>
   </div>
+
+
+
+  <footer>
+    <div class="footer">
+      <div class="row">
+        <div class="col-sm">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">speakout.io</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="decisionrights.html">Data Decision Rights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
   <!-- Optional JavaScript -->

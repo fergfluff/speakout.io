@@ -78,6 +78,9 @@
     <a class="navbar-brand" href="index.html">SpeakOut</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
         <li class="nav-item ">
           <a class="nav-link" href="speak.html">Speak</a>
         </li>
@@ -97,32 +100,28 @@
   <article>
 
     <!-- FIRST SPEAKER PAGE -->
-    <div id="firstListenerPage" class="container-fluid">
-      <div id="attractDiv" class="container-fluid">
-        <div class="row ">
-
-          <h2 id="subpageLogo">
-                          Listen
-                      </h2>
-          </header>
-        </div>
+    <div class="container-fluid">
+      <div class="attractDiv">
+        <h2 class="subpageLogo">
+              Listen
+          </h2>
       </div>
 
-      <div class="container-fluid">
-        <div class="row justify-content-md-center">
-          <header style="text-align: center;">
+      <div id="firstListenerPage">
+        <div>
+          <div class="row justify-content-md-center">
             <p class="instructionText">
               Decide how and when to use SpeakOut. To learn what data protections you can add yourself, go <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
             </p>
-          </header>
+          </div>
         </div>
-      </div>
 
-      <div id="calltoAction" class="container-fluid">
-        <div class="container-fluid">
-          <div id="calltoActionButton" class="row justify-content-md-center">
-            <div class="col-md-4 col-lg-4">
-              <button id="nextListenerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Next</button>
+        <div id="calltoAction">
+          <div>
+            <div id="calltoActionButton" class="row justify-content-md-center">
+              <div class="col-md-4 col-lg-4">
+                <button id="nextListenerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Next</button>
+              </div>
             </div>
           </div>
         </div>
@@ -131,21 +130,8 @@
 
 
     <!-- SECOND LISTEN PAGE -->
-    <!-- copy this <section> and next <script> -->
     <section id="secondListenerPage1" class="experiment">
-
       <div id="secondListenerPage" class="container-fluid">
-        <div id="attractDiv" class="container-fluid">
-          <div class="row justify-content-md-center">
-            <header style="text-align: center;">
-              <h1 id="subpageLogo">
-                            Listen
-                        </h1>
-            </header>
-          </div>
-        </div>
-
-        <div class="container-fluid">
           <div class="row justify-content-md-center">
             <header style="text-align: center;">
               <p class="instructionText">
@@ -159,16 +145,13 @@
               </p>
             </header>
           </div>
-        </div>
 
         <div id="calltoAction" class="container-fluid">
-          <div class="container-fluid">
             <div id="calltoActionButton" class="row justify-content-md-center">
               <div class="col-md-4 col-lg-4">
                 <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
               </div>
             </div>
-          </div>
         </div>
       </div>
       <!-- <section>
@@ -178,32 +161,19 @@
                         <option>Screen</option>
                     </select>
                     <input type="text" id="broadcast-name" class="speakerClass">
-
                     Create a Submit Name button that appear right away -->
-
       <!-- This button becomes the "Start" button, and is hidden at first -->
       <!-- <button id="setup-new-broadcast" class="setup speakerClass">Start Broadcast</button> -->
-
       <!-- </section> -->
 
-
-
-      <div id="thirdListenerPage" class="container-fluid">
-        <div id="attractDiv" class="container-fluid">
-          <div class="row justify-content-md-center">
-            <header style="text-align: center;">
-              <h1 id="subpageLogo">
-                            Third Listener Page
-                        </h1>
-            </header>
-          </div>
-        </div>
-
+    <section>
+      <div id="thirdListenerPage">
         <!-- list of all available broadcasting rooms -->
         <table style="width: 100%;" id="rooms-list"></table>
 
         <!-- local/remote videos container -->
         <div id="videos-container"></div>
+      </div>
     </section>
 
     <script>

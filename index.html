@@ -18,79 +18,70 @@
   <link rel="icon" type="image/png" href="iconSpeakOut.png">
 
   <title>SpeakOut</title>
+
+
 </head>
 
 <body>
 
   <!-- ONE CONTAINER FOR EACH .HTML PAGE  -->
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    <!-- <a class="navbar-brand" href="#">SpeakOut</a> -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
 
-        <!-- <li class="nav-item">
-                <a class="nav-link" href="speak.html">Speak</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="finishqueensboulevard.html">Listen</a>
-              </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="decisionrights.html">Your Decision Rights</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-      </ul>
-    </div>
+  <nav id="homepageNav" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="index.html">
+      <img src="iconSpeakOut2.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
   </nav>
+
 
 
   <!-- CAN JUST REMOVE DIVS  -->
   <div class="container-fluid">
-    <div id="attractDiv">
+
+    <div class="attractDiv">
       <!-- <h1 id="homepageLogo" class="text-center">SpeakOut</h1> -->
       <h1 id="homepageLogo">
               SpeakOut
           </h1>
     </div>
 
-
-
-
-    <div class="row justify-content-md-center">
-      <p id="tagline" class="text-center">A tool for broadcasting speeches at protests.</p>
+    <div class="homepageTagline" class="row justify-content-md-center">
+      <p class="text-center">A tool for broadcasting speeches at protests.</p>
+      <p class="text-center">Built with some privacy considerations. You can add <a style="text-decoration: underline" href='decisionrights.html'>more</a>.</p>
     </div>
-
-
-    <div class="container-fluid">
-      <div>
-        <div class="row justify-content-md-center">
-          <p id="tagline" class="text-center">Built with some privacy considerations. You can add <a style="text-decoration: underline" href='/decisionrights.html'>more</a>.</p>
+    <div class="calltoAction" class="row justify-content-md-center">
+      <div class="calltoAction" class="calltoActionButton" class="row justify-content-md-center">
+        <div class="calltoAction" class="col-md-4 col-lg-4">
+          <a class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="speak.html" role="button">Speak</a>
         </div>
       </div>
-    </div>
-
-    <div id="calltoAction" class="container-fluid">
-      <div class="container-fluid">
-        <div id="calltoActionButton" class="row justify-content-md-center">
-          <div class="col-md-4 col-lg-4">
-            <a class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="speak.html" role="button">Speak</a>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid">
-        <div id="calltoActionButton" class="row justify-content-md-center">
-          <div class="col-md-4 col-lg-4">
-            <a class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="finishqueensboulevard.html" role="button">Listen</a>
-          </div>
+      <div class="calltoAction" class="calltoActionButton" class="row justify-content-md-center">
+        <div class="calltoAction" class="col-md-4 col-lg-4">
+          <a class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="listen.html" role="button">Learn How to Listen</a>
         </div>
       </div>
     </div>
   </div>
+
+  <footer>
+    <div class="footer" class="container-fluid">
+      <div class="row">
+        <div class="col-sm">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">speakout.io</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="decisionrights.html">Data Decision Rights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
   <!-- Optional JavaScript -->
