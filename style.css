@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'fatbrushwkbold';
     src: url('fonts/fatbrushwk_2-webfont.woff') format('woff'),
          url('fonts/fatbrushwk_2-webfont.ttf') format('truetype'),
@@ -6,14 +6,29 @@
 
     font-weight: normal;
     font-style: normal;
-}
+} */
+
+/* @font-face {
+    font-family: 'fatbrushwkbold';
+    src: url('fatbrushwk-webfont.woff') format('woff'),
+         url('fatbrushwk-webfont.woff2') format('woff2'),
+         url('fonts/fatbrushwk_2-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+} */
+
+
 
 .navbar-dark .navbar-nav .nav-link .active {
     color: rgba(255,255,255,1.0);
 }
 
 .navbar-brand {
-  font-family: 'fatbrushwkbold';
+  /* font-family: 'fatbrushwkbold';  */
+  font-family: flood-std, sans-serif;
+  /* font-family: 'Permanent Marker', cursive; */
+
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
@@ -38,14 +53,18 @@
 
 #homepageLogo
  {
-  font-family: 'fatbrushwkbold';
+  /* font-family: 'fatbrushwkbold'; */
+  font-family: flood-std, sans-serif;
+  /* font-family: 'Permanent Marker', cursive; */
   text-align: center;
   font-size: 4.5rem;
 }
 
 .subpageLogo
  {
-  font-family: 'fatbrushwkbold';
+  /* font-family: 'fatbrushwkbold'; */
+  font-family: flood-std, sans-serif;
+  /* font-family: 'Permanent Marker', cursive; */
   text-align: center;
   font-size: 3rem;
 }
