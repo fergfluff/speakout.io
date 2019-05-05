@@ -16,6 +16,12 @@ This is built for a tight use case with Transportation Alternatives.
 
 **Note Before Using This Code**
 
-This is a beta version. It has some vulnerabilities that need to be dealt with before deploying in other protest or demonstration contexts.
+This is a beta version. Check the Issues above to see what needs to be fixed before deploying in other demonstration contexts, and what features I'm thinking of adding.
 
-[https://www.elizabethjeaneferguson.com/speakout](https://www.elizabethjeaneferguson.com/speakout)
+**Collaborating**
+
+I’m interested in collaborating! This can look like working together on the design and back-end of SpeakOut and similar projects. I’m also open to testing SpeakOut in new demonstrations contexts. You can find my contact information on my website. 
+
+Contact: https://www.elizabethjeaneferguson.com/about
+
+More info: https://www.elizabethjeaneferguson.com/speakout
