@@ -224,7 +224,7 @@
         // PROBABLY
         // I can remove this function on /speak to prevent join broadcast button appearing
         onRoomFound: function(room) {
-          console.log("onRoomFound, line 174");
+          // console.log("onRoomFound, line 174");
           var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
           if (alreadyExist) return;
 
@@ -466,7 +466,7 @@
     nextListenerButton.addEventListener("click", function() {
       firstListenerPage.style.display = 'none';
       secondListenerPage.style.display = 'block';
-      console.log(secondListenerPage.style.display);
+      // console.log(secondListenerPage.style.display);
     });
 
     joinBroadcastButton.addEventListener("click", function() {
@@ -474,7 +474,7 @@
       thirdListenerPage.style.display = 'block';
     });
 
-    console.log("hi " + secondListenerPage.style.display);
+    // console.log("hi " + secondListenerPage.style.display);
   </script>
 
 

@@ -92,13 +92,13 @@ function onNewNamespace(channel, sender) {
         }
 
         socket.on('message', function (data) {
-          console.log('message');
-          console.log(data);
+          // console.log('message');
+          // console.log(data);
             // if (data.sender == sender) {
             //     if(!username) username = data.data.sender;
 
                 socket.broadcast.emit('message', data.data);
-                console.log(data.data);
+                // console.log(data.data);
             // }
         });
 

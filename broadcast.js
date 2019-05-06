@@ -16,6 +16,12 @@ var broadcast = function(config) {
     defaultSocket = {};
 
   function openDefaultSocket(callback) {
+    // this does not get spammed, it gets called once
+    console.log("openDefaultSocket");
+    //onDefaultSocketResponse() is what gets spammed below
+    //what is onmessage, is it a function of socket.io or websocket (?)
+    //what is calling it
+    // line 289 in speak.html might be calling it: socket.on('message', config.onmessage);
     defaultSocket = config.openSocket({
       onmessage: onDefaultSocketResponse,
       callback: function(socket) {
@@ -26,7 +32,9 @@ var broadcast = function(config) {
   }
 
   function onDefaultSocketResponse(response) {
-    console.log("received socket " + response);
+    // this gets spammed
+    // what is calling it?
+    // console.log("received socket ", response);
     if (response.userToken == self.userToken) return;
 
     if (isGetNewRoom && response.roomToken && response.broadcaster) config.onRoomFound(response);
@@ -66,6 +74,8 @@ var broadcast = function(config) {
       htmlElement = document.createElement(self.isAudio ? 'audio' : 'video'),
       inner = {},
       peer;
+
+
 
     var peerConfig = {
       constraints: {
@@ -135,6 +145,7 @@ var broadcast = function(config) {
     }
 
     function afterRemoteStreamStartedFlowing() {
+      console.log("afterRemoteStreamStartedFlowing");
       gotstream = true;
       config.onRemoteStream(htmlElement);
 
