@@ -41,7 +41,7 @@ function serverHandler(request, response) {
                 'Content-Type': 'text/html'
             });
 
-            filename += '/finishqueensboulevard.html';
+            filename += '/index.html';
         }
 
 
