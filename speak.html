@@ -534,14 +534,25 @@
       let goLiveButton = document.getElementById("goLiveButton");
       let leaveBroadcastButton = document.getElementById("leaveBroadcastButton");
 
+      console.log("When loading + " + firstSpeakerPage.style.display);
+      console.log("When loading + " + secondSpeakerPage.style.display);
+      console.log("When loading + " + thirdSpeakerPage.style.display);
+
+
       nextSpeakerButton.addEventListener("click", function() {
         firstSpeakerPage.style.display = 'none';
         secondSpeakerPage.style.display = 'block';
+        console.log("When next is clicked + " + firstSpeakerPage.style.display);
+        console.log("When next is clicked + " + secondSpeakerPage.style.display);
+        console.log("When next is clicked + " + thirdSpeakerPage.style.display);
       });
 
       goLiveButton.addEventListener("click", function() {
         secondSpeakerPage.style.display = 'none';
         thirdSpeakerPage.style.display = 'block';
+        console.log("When goLiveButton is clicked + " + firstSpeakerPage.style.display);
+        console.log("When goLiveButton is clicked + " + secondSpeakerPage.style.display);
+        console.log("When goLiveButton is clicked + " + thirdSpeakerPage.style.display);
       });
 
       leaveBroadcastButton.addEventListener("click", function() {
