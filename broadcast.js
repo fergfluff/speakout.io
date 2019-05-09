@@ -13,7 +13,7 @@ var broadcast = function(config) {
     isbroadcaster,
     isGetNewRoom = true,
     participants = 1,
-    defaultSocket = {};
+    defaultSocket = { };
 
   function openDefaultSocket(callback) {
     // this does not get spammed, it gets called once
@@ -34,6 +34,7 @@ var broadcast = function(config) {
   function onDefaultSocketResponse(response) {
     // this gets spammed
     // what is calling it?
+    // openDefaultSocket
     // console.log("received socket ", response);
     if (response.userToken == self.userToken) return;
 
@@ -50,20 +51,28 @@ var broadcast = function(config) {
   }
 
   function openSubSocket(_config) {
-    if (!_config.channel) return;
+    console.log("openSubSocket");
+    if (!_config.channel) {
+      console.log("leaving");
+
+      return;
+    }
     var socketConfig = {
       channel: _config.channel,
       onmessage: socketResponse,
       onopen: function() {
-        if (isofferer && !peer) initPeer();
+        console.log("should call initPeer");
+        if (isofferer && !peer) { initPeer(); } else { console.log("bad"); }
       }
     };
 
     socketConfig.callback = function(_socket) {
+      console.log("socketConfig.callback");
       socket = _socket;
       this.onopen();
 
       if (_config.callback) {
+        console.log("calling callback");
         _config.callback();
       }
     };
@@ -123,6 +132,7 @@ var broadcast = function(config) {
     };
 
     function initPeer(offerSDP) {
+      console.log("actually in initPeer");
       if (!offerSDP) {
         peerConfig.onOfferSDP = sendsdp;
       } else {

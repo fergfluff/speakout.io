@@ -62,8 +62,8 @@
 
 .subpageLogo
  {
-  /* font-family: 'fatbrushwkbold'; */
-  font-family: flood-std, sans-serif;
+  font-family: 'fatbrushwkbold';
+  /* font-family: flood-std, sans-serif; */
   /* font-family: 'Permanent Marker', cursive; */
   text-align: center;
   font-size: 3rem;

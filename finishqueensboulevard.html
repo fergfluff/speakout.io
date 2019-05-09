@@ -54,18 +54,14 @@
   <!-- Local copies of this code are saved on my machine  -->
   <script src="https://cdn.webrtc-experiment.com/DetectRTC.js"></script>
   <!-- My updated socket.io copy -->
-  <script src="/socket.io.js">
-  </script>
+  <script src="/socket.io.js"></script>
   <!-- Muaz Khan's hosted socket.io copy -->
   <!-- <script src="https://cdn.webrtc-experiment.com/socket.io.js"> </script> -->
   <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
   <script src="https://cdn.webrtc-experiment.com/IceServersHandler.js"></script>
   <script src="https://cdn.webrtc-experiment.com/CodecsHandler.js"></script>
-  <script src="https://cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js">
-  </script>
-  <script src="broadcast.js">
-  </script>
-
+  <script src="https://cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js"></script>
+  <script src="broadcast.js"></script>
 </head>
 
 <body>
@@ -187,6 +183,8 @@
 
           var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
           var SIGNALING_SERVER = 'https://www.speakout.io:9559/';
+          // var SIGNALING_SERVER = 'https://www.staging.speakout.io:9559/';
+
 
           //config.channel = config.channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
           config.channel = config.channel || "speakout";
@@ -216,15 +214,17 @@
         },
 
         onRemoteStream: function(htmlElement) {
+          // this is not happening and it should
           console.log("onRemoteStream");
           videosContainer.appendChild(htmlElement);
           rotateInCircle(htmlElement);
         },
 
-        // PROBABLY
         // I can remove this function on /speak to prevent join broadcast button appearing
         onRoomFound: function(room) {
-          // console.log("onRoomFound, line 174");
+          // this gets spammed
+          // onRoomFound is in broadcast.js here: line 40 config.onRoomFound(response)
+          console.log("onRoomFound, line 174");
           var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
           if (alreadyExist) return;
 

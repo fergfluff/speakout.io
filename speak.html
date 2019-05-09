@@ -21,8 +21,6 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <!-- Muaz Khan's viewport code -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
   <!-- Bootstrap's viewport code -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="author" type="text/html" href="https://www.elizabethjeaneferguson.com/">
@@ -143,7 +141,7 @@
             <button id="goLiveButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Go Live!</button>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
 
 
@@ -177,7 +175,7 @@
 
 
     <!-- OLD DROP DOWN FIELD AND BUTTON -->
-    <!-- <section class="experiment">
+    <section class="experiment">
       <section>
         <select id="broadcasting-option">
                   <option>Audio + Video</option>
@@ -185,14 +183,16 @@
                   <option>Screen</option>
               </select>
         <input type="text" id="broadcast-name">
+
         <button id="setup-new-broadcast" class="setup">Setup New Broadcast</button>
-      </section> -->
+
+      </section>
 
     <!-- list of all available broadcasting rooms -->
-    <!-- <table style="width: 100%;" id="rooms-list"></table> -->
+    <table style="width: 100%;" id="rooms-list"></table>
 
     <!-- local/remote videos container -->
-    <!-- <div id="videos-container"></div> -->
+    <div id="videos-container"></div>
     <!-- </section>
 
 
@@ -259,8 +259,10 @@
           //https://github.com/muaz-khan/WebRTC-Experiment/tree/master/socketio-over-nodejs
           //Now forked onto my github here:
           var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
-          // My own signaling server software using Muaz Khan's code on my own server
+          // My own signaling server software using Muaz Khan's code on my own remove server
           var SIGNALING_SERVER = 'https://www.speakout.io:9559/';
+          // var SIGNALING_SERVER = 'https://www.staging.speakout.io:9559/';
+
 
           //config.channel = config.channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
           config.channel = config.channel || "speakout";
@@ -297,6 +299,7 @@
 
         onRoomFound: function(room) {
           // this gets spammed
+          // Error is "Cannot read property 'appendChild' of null at Object.onRoomFound"
           // console.log("onRoomFound: function(room)");
           var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
           if (alreadyExist) return;

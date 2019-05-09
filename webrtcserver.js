@@ -13,12 +13,10 @@ var fs = require('fs');
 
 // don't forget to use your own keys!
 var options = {
-    key: fs.readFileSync('privkey.pem'),
-    cert: fs.readFileSync('cert.pem')
-
-    //TODO: His keys are still here, tell him?
-    // key: fs.readFileSync('/etc/letsencrypt/live/webrtcweb.com/privkey.pem'),
-    // cert: fs.readFileSync('/etc/letsencrypt/live/webrtcweb.com/fullchain.pem')
+    // key: fs.readFileSync('privkey.pem'),
+    // cert: fs.readFileSync('cert.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/staging.speakout.io/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/staging.speakout.io/cert.pem')
 };
 
 // HTTPs server
@@ -92,7 +90,7 @@ function onNewNamespace(channel, sender) {
         }
 
         socket.on('message', function (data) {
-          // console.log('message');
+          console.log('message');
           // console.log(data);
             // if (data.sender == sender) {
             //     if(!username) username = data.data.sender;
