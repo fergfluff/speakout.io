@@ -110,7 +110,7 @@
       </div>
       <div class="calltoAction" class="calltoActionButton" class="row justify-content-md-center">
         <div class="calltoAction" class="col-md-4 col-lg-4">
-          <a id="nextSpeakerButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" role="button">Next</a>
+          <a id="nextSpeakerButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" style="color: #fff" role="button">Next</a>
         </div>
       </div>
     </div>
@@ -127,431 +127,360 @@
         <label class="instructionText" for="basic-url">Your unique URL:</label>
       </div>
 
+      <div id="selectDiv" class="input-group mb-3" class="row justify-content-md-center">
+        <select id="broadcasting-option">
+          <option>Audio + Video</option>
+          <option>Only Audio</option>
+          <option>Screen</option>
+        </select>
+      </div>
 
       <div id="inputForm" class="input-group mb-3" class="row justify-content-md-center">
+
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon3">https://speakout.io/</span>
         </div>
-        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        <input id="broadcast-name" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
       </div>
       <br>
       <div class="calltoAction">
         <div class="calltoActionButton" class="row justify-content-md-center">
           <div class="col-md-4 col-lg-4">
-            <button id="goLiveButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Go Live!</button>
+            <a id="setup-new-broadcast" class="btn btn-secondary btn-lg btn-block" class="mobileButton" style="color: #fff" role="button">Go Live!</a>
+            <!-- <button id="setup-new-broadcast" class="setup" id="goLiveButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Go Live!</button> -->
           </div>
         </div>
       </div>
+
+      <!-- <input type="text" id="broadcast-name"> -->
+
+      <!-- <button id="setup-new-broadcast" class="setup">Setup New Broadcast</button> -->
     </div>
 
+    <!-- <button id="setup-new-broadcast" class="setup" type="button">Go Live!</button> -->
 
     <!-- THIRD SPEAKER PAGE -->
-    <section id="thirdSpeakerPage">
+    <div id="thirdSpeakerPage">
+      <section>
 
-      <div class="row justify-content-md-center">
-        <p class="instructionText">You’re broadcasting live!</p>
-        <p class="instructionText">Use the media player to pause or mute.</p>
-      </div>
-
-      <div class="row justify-content-md-center">
-        <p class="instructionText">Media Player</p>
-      </div>
-
-      <div class="row justify-content-md-center">
-        <p class="instructionText"># of Listeners</p>
-      </div>
-
-      <div class="row justify-content-md-center">
-        <p class="instructionText">Unique URL Here</p>
-      </div>
-
-      <div id="calltoActionButton" class="row justify-content-md-center">
-        <div class="col-md-4 col-lg-4">
-          <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
+        <div id="broadcastingText">
+          <div class="row justify-content-md-center">
+            <p class="instructionText">You’re broadcasting live! Use the media player to pause or mute.</p>
+          </div>
         </div>
-      </div>
-    </section>
+        <!--
+        <div class="row justify-content-md-center">
+          <p class="instructionText">Media Player</p>
+        </div> -->
+
+        <div id="videos-container"></div>
+
+        <div class="centerText" class="row justify-content-md-center">
+          <p class="instructionText">12 Listeners</p>
+        </div>
+
+        <div id="uniqueURLButton">
+          <div class="centerText" class="row justify-content-md-center">
+            <p class="instructionText">Share your link below with listeners. 🔗 </p>
+            <a class="btn btn-outline-primary" id="uniqueURLText" class="mobileButton" href="index.html" role="button">https://www.speakout.io/finishqueensboulevard</a>
+          </div>
+        </div>
+
+        <div>
+          <div id="calltoActionButton" class="row justify-content-md-center">
+            <div class="col-md-4 col-lg-4">
+              <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
 
 
     <!-- OLD DROP DOWN FIELD AND BUTTON -->
-    <section class="experiment">
-      <section>
-        <select id="broadcasting-option">
-                  <option>Audio + Video</option>
-                  <option>Only Audio</option>
-                  <option>Screen</option>
-              </select>
-        <input type="text" id="broadcast-name">
-
-        <button id="setup-new-broadcast" class="setup">Setup New Broadcast</button>
-
-      </section>
-
-    <!-- list of all available broadcasting rooms -->
-    <table style="width: 100%;" id="rooms-list"></table>
-
-    <!-- local/remote videos container -->
-    <div id="videos-container"></div>
-    <!-- </section>
-
-
-
-
-    NEW DROP DOWN FIELD AND BUTTON  -->
-    <!-- <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Media Type
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <option class="dropdown-item">Audio + Video</option>
-          <option class="dropdown-item">Only Audio</option>
-          <option class="dropdown-item">Screen</option>
+    <section class="experiment" id="thirdSpeakerPage">
+      <!-- <section>
+        <div class="row justify-content-md-center">
+          <p class="instructionText">You’re broadcasting live! Use the media player to pause or mute.</p>
         </div>
-      </div>
 
-      <label class="instructionText" for="basic-url">Your unique URL</label>
-      <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">https://speakout.io/</span>
-          </div>
-        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-      </div> -->
+        <div class="row justify-content-md-center">
+          <p class="instructionText">12 Listeners</p>
+        </div>
 
-    <!-- <div id="calltoAction" class="container-fluid">
-        <div class="container-fluid">
-          <div id="calltoActionButton" class="row justify-content-md-center">
-            <div class="col-md-4 col-lg-4">
-              <button id="setup-new-broadcast" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Go Live 2</button>
-            </div>
+        <div class="row justify-content-md-center">
+          <p class="instructionText">https://www.speakout.io/finishqueensboulevard</p>
+        </div>
+
+        <div id="calltoActionButton" class="row justify-content-md-center">
+          <div class="col-md-4 col-lg-4">
+            <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
           </div>
         </div>
-      </div> -->
 
-    <!-- <p>
-          If you might have denied access to your microphone, and you are using Chrome, please tap <a href="chrome://settings/content/microphone">here</a> to go to your browser settings, look under Blocked, and remove speakout.io.
-      </p> -->
+      </section> -->
 
-    <!-- <div id="calltoAction" class="container-fluid">
-        <div class="container-fluid">
-          <div id="calltoActionButton" class="row justify-content-md-center">
-            <div class="col-md-4 col-lg-4">
-              <button id="nextSpeakerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block" href="/index.html">Leave Broadcast</button>
-            </div>
-          </div>
-        </div>
-      </div> -->
+      <!-- list of all available broadcasting rooms -->
+      <table style="width: 100%;" id="rooms-list"></table>
+
+      <!-- local/remote videos container -->
 
 
+      <!-- SCRIPT -->
+      <script>
+        // Muaz Khan     - https://github.com/muaz-khan
+        // MIT License   - https://www.webrtc-experiment.com/licence/
+        // Documentation - https://github.com/muaz-khan/WebRTC-Experiment/tree/master/webrtc-broadcasting
+
+        var config = {
+          openSocket: function(config) {
+            console.log("function openSocket()");
+
+            // Muaz Khan's signaling server, redirects to his Github here:
+            //https://github.com/muaz-khan/WebRTC-Experiment/tree/master/socketio-over-nodejs
+            //Now forked onto my github here:
+            var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
+            // My own signaling server software using Muaz Khan's code on my own remove server
+            var SIGNALING_SERVER = 'https://www.speakout.io:9559/';
+            // var SIGNALING_SERVER = 'https://www.staging.speakout.io:9559/';
 
 
-    <!-- SCRIPT -->
-    <script>
-      // Muaz Khan     - https://github.com/muaz-khan
-      // MIT License   - https://www.webrtc-experiment.com/licence/
-      // Documentation - https://github.com/muaz-khan/WebRTC-Experiment/tree/master/webrtc-broadcasting
+            //config.channel = config.channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
+            config.channel = config.channel || "asdf";
+            var sender = Math.round(Math.random() * 999999999) + 999999999;
 
-      var config = {
-        openSocket: function(config) {
-          console.log("function openSocket()");
-
-          // Muaz Khan's signaling server, redirects to his Github here:
-          //https://github.com/muaz-khan/WebRTC-Experiment/tree/master/socketio-over-nodejs
-          //Now forked onto my github here:
-          var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
-          // My own signaling server software using Muaz Khan's code on my own remove server
-          var SIGNALING_SERVER = 'https://www.speakout.io:9559/';
-          // var SIGNALING_SERVER = 'https://www.staging.speakout.io:9559/';
-
-
-          //config.channel = config.channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
-          config.channel = config.channel || "asdf";
-          var sender = Math.round(Math.random() * 999999999) + 999999999;
-
-          io.connect(SIGNALING_SERVER).emit('new-channel', {
-            channel: config.channel,
-            sender: sender
-          });
-
-          var socket = io.connect(SIGNALING_SERVER + config.channel);
-          socket.channel = config.channel;
-          socket.on('connect', function() {
-            console.log("socket.on('connect', function ()");
-            if (config.callback) config.callback(socket);
-          });
-
-          socket.send = function(message) {
-            console.log("sending through socket: " + message);
-            socket.emit('message', {
-              sender: sender,
-              data: message
+            io.connect(SIGNALING_SERVER).emit('new-channel', {
+              channel: config.channel,
+              sender: sender
             });
-          };
 
-          socket.on('message', config.onmessage);
-        },
-
-        onRemoteStream: function(htmlElement) {
-          console.log("onRemoteStream: function(htmlElement)");
-          videosContainer.appendChild(htmlElement);
-          rotateInCircle(htmlElement);
-        },
-
-        onRoomFound: function(room) {
-          // this gets spammed
-          // Error is "Cannot read property 'appendChild' of null at Object.onRoomFound"
-          // console.log("onRoomFound: function(room)");
-          var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
-          if (alreadyExist) return;
-
-          if (typeof roomsList === 'undefined') roomsList = document.body;
-
-          var tr = document.createElement('tr');
-          tr.innerHTML = '<td><strong>' + room.roomName + '</strong> is broadcasting!</td>' +
-            '<td><button class="join">Join</button></td>';
-          roomsList.appendChild(tr);
-
-          var joinRoomButton = tr.querySelector('.join');
-          joinRoomButton.setAttribute('data-broadcaster', room.broadcaster);
-          joinRoomButton.setAttribute('data-roomToken', room.broadcaster);
-          joinRoomButton.onclick = function() {
-            console.log("joinRoomButton clicked");
-            this.disabled = true;
-
-            var broadcaster = this.getAttribute('data-broadcaster');
-            var roomToken = this.getAttribute('data-roomToken');
-            broadcastUI.joinRoom({
-              roomToken: roomToken,
-              joinUser: broadcaster
+            var socket = io.connect(SIGNALING_SERVER + config.channel);
+            socket.channel = config.channel;
+            socket.on('connect', function() {
+              console.log("socket.on('connect', function ()");
+              if (config.callback) config.callback(socket);
             });
-            hideUnnecessaryStuff();
-          };
-        },
-        onNewParticipant: function(numberOfViewers) {
-          document.title = 'Viewers: ' + numberOfViewers;
-        },
-        onReady: function() {
-          console.log('now you can open or join rooms');
-        }
-      };
 
-      function setupNewBroadcastButtonClickHandler() {
-        console.log("function setupNewBroadcastButtonClickHandler()");
+            socket.send = function(message) {
+              console.log("sending through socket: " + message);
+              socket.emit('message', {
+                sender: sender,
+                data: message
+              });
+            };
 
-        document.getElementById('broadcast-name').disabled = true;
-        document.getElementById('setup-new-broadcast').style.visibility = "hidden";
-
-        DetectRTC.load(function() {
-          captureUserMedia(function() {
-            var shared = 'video';
-            if (window.option == 'Only Audio') {
-              shared = 'audio';
-            }
-            if (window.option == 'Screen') {
-              shared = 'screen';
-            }
-
-            console.log("create room being called: " + document.getElementById('broadcast-name').value);
-            broadcastUI.createRoom({
-              roomName: (document.getElementById('broadcast-name') || {}).value || 'Anonymous',
-              isAudio: shared === 'audio'
-            });
-          });
-          hideUnnecessaryStuff();
-        });
-      }
-
-      function captureUserMedia(callback) {
-        console.log("function captureUserMedia()");
-        var constraints = null;
-        window.option = broadcastingOption ? broadcastingOption.value : '';
-        if (option === 'Only Audio') {
-          constraints = {
-            audio: true,
-            video: false
-          };
-
-          if (DetectRTC.hasMicrophone !== true) {
-            alert('DetectRTC library is unable to find microphone; maybe you denied microphone access once and it is still denied or maybe microphone device is not attached to your system or another app is using same microphone.');
-          }
-        }
-        if (option === 'Screen') {
-          var video_constraints = {
-            mandatory: {
-              chromeMediaSource: 'screen'
-            },
-            optional: []
-          };
-          constraints = {
-            audio: false,
-            video: video_constraints
-          };
-
-          if (DetectRTC.isScreenCapturingSupported !== true) {
-            alert('DetectRTC library is unable to find screen capturing support. You MUST run chrome with command line flag "chrome --enable-usermedia-screen-capturing"');
-          }
-        }
-
-        if (option != 'Only Audio' && option != 'Screen' && DetectRTC.hasWebcam !== true) {
-          alert('DetectRTC library is unable to find webcam; maybe you denied webcam access once and it is still denied or maybe webcam device is not attached to your system or another app is using same webcam.');
-        }
-
-        var htmlElement = document.createElement(option === 'Only Audio' ? 'audio' : 'video');
-
-        htmlElement.muted = true;
-        htmlElement.volume = 0;
-
-        try {
-          htmlElement.setAttributeNode(document.createAttribute('autoplay'));
-          htmlElement.setAttributeNode(document.createAttribute('playsinline'));
-          htmlElement.setAttributeNode(document.createAttribute('controls'));
-        } catch (e) {
-          htmlElement.setAttribute('autoplay', true);
-          htmlElement.setAttribute('playsinline', true);
-          htmlElement.setAttribute('controls', true);
-        }
-
-        var mediaConfig = {
-          video: htmlElement,
-          onsuccess: function(stream) {
-            config.attachStream = stream;
-
-            videosContainer.appendChild(htmlElement);
-            console.log("is the videosContainer.appendChild line executing");
-            rotateInCircle(htmlElement);
-
-            callback && callback();
+            socket.on('message', config.onmessage);
           },
-          onerror: function() {
-            if (option === 'Only Audio') alert('unable to get access to your microphone');
-            else if (option === 'Screen') {
-              if (location.protocol === 'http:') alert('Please test this WebRTC experiment on HTTPS.');
-              else alert('Screen capturing is either denied or not supported. Are you enabled flag: "Enable screen capture support in getUserMedia"?');
-            } else alert('unable to get access to your webcam');
+
+          onRemoteStream: function(htmlElement) {
+            console.log("onRemoteStream: function(htmlElement)");
+            videosContainer.appendChild(htmlElement);
+            rotateInCircle(htmlElement);
+          },
+
+          onRoomFound: function(room) {
+            // this gets spammed
+            // Error is "Cannot read property 'appendChild' of null at Object.onRoomFound"
+            // console.log("onRoomFound: function(room)");
+            var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
+            if (alreadyExist) return;
+
+            if (typeof roomsList === 'undefined') roomsList = document.body;
+
+            var tr = document.createElement('tr');
+            tr.innerHTML = '<td><strong>' + room.roomName + '</strong> is broadcasting!</td>' +
+              '<td><button class="join">Join</button></td>';
+            roomsList.appendChild(tr);
+
+            var joinRoomButton = tr.querySelector('.join');
+            joinRoomButton.setAttribute('data-broadcaster', room.broadcaster);
+            joinRoomButton.setAttribute('data-roomToken', room.broadcaster);
+            joinRoomButton.onclick = function() {
+              console.log("joinRoomButton clicked");
+              this.disabled = true;
+
+              var broadcaster = this.getAttribute('data-broadcaster');
+              var roomToken = this.getAttribute('data-roomToken');
+              broadcastUI.joinRoom({
+                roomToken: roomToken,
+                joinUser: broadcaster
+              });
+              hideUnnecessaryStuff();
+            };
+          },
+          onNewParticipant: function(numberOfViewers) {
+            document.title = 'Viewers: ' + numberOfViewers;
+          },
+          onReady: function() {
+            console.log('now you can open or join rooms');
           }
         };
-        if (constraints) mediaConfig.constraints = constraints;
-        getUserMedia(mediaConfig);
-      }
 
+        function setupNewBroadcastButtonClickHandler() {
+          console.log("function setupNewBroadcastButtonClickHandler()");
 
+          document.getElementById('broadcast-name').disabled = true;
+          document.getElementById('setup-new-broadcast').style.visibility = "hidden";
 
+          DetectRTC.load(function() {
+            captureUserMedia(function() {
+              var shared = 'video';
+              // var shared = 'audio';
 
-      var broadcastUI = broadcast(config);
+              if (window.option == 'Only Audio') {
+                shared = 'audio';
+              }
+              if (window.option == 'Screen') {
+                shared = 'screen';
+                // shared = 'audio';
 
-      /* UI specific */
-      var videosContainer = document.getElementById('videos-container') || document.body;
+              }
 
-      var setupNewBroadcast = document.getElementById('setup-new-broadcast');
-
-      var roomsList = document.getElementById('rooms-list');
-
-      var broadcastingOption = document.getElementById('broadcasting-option');
-
-      // This if the new broadcast button has a value
-      // and user clicks the button,
-      // then run the click handler
-      // Create a new little function called submitUserName that
-      // if (setupNewBroadcast) setupNewBroadcast.onclick = submitUserName;
-
-      // Create the submitNameButton using javascript
-      //   var submitNameButton = document.createElement("button");
-      //   document.body.appendChild(submitNameButton);
-      // }
-
-      // then run javascript function showing and hiding classes
-      // document.getElementById("setupNewBroadcast").addEventListener("click", function() {
-      // 	console.log("user submitted Name")
-      //
-      //   hideClass("page1");
-      //   showClass("page2");
-      //
-      // });
-
-
-
-      if (setupNewBroadcast) setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
-
-      // function hideClass(className) {
-      //
-      //   var divsToHide = document.getElementsByClassName(className); //divsToHide is an array
-      //     for(var i = 0; i < divsToHide.length; i++){
-      //         divsToHide[i].style.visibility = "hidden"; // or
-      //         divsToHide[i].style.display = "none"; // depending on what you're doing
-      //     }
-      //
-      //   }
-      //
-      //   function showClass(className) {
-      //
-      //     var divsToShow = document.getElementsByClassName(className); //divsToHide is an array
-      //       for(var i = 0; i < divsToShow.length; i++){
-      //           divsToShow[i].style.visibility = "visible"; // or
-      //           divsToShow[i].style.display = "block"; // depending on what you're doing
-      //       }
-      //
-      //     }
-
-
-
-
-      // function submitUserName() {
-      //
-      //   //call hideClass with the name of the class as a string so it can be compared/found
-      //   hideClass("page1");
-      //   showClass("page2");
-      //
-      //   // set the value of the input value to be the user's name
-      //   // userName will be used for the design of my website - to repeat the room's name as needed
-      //   config.userName = (document.getElementById('broadcast-name') || { }).value || 'Anonymous';
-      //   document.getElementById('broadcast-name').style.display = "none";
-      //
-      //   // Change the functionality of the button back to the original functionality
-      //   // could add fancy things like change the color/status of the button
-      //   setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
-      // }
-
-
-      function hideUnnecessaryStuff() {
-        var visibleElements = document.getElementsByClassName('visible'),
-          length = visibleElements.length;
-        for (var i = 0; i < length; i++) {
-          visibleElements[i].style.display = 'none';
+              console.log("create room being called: " + document.getElementById('broadcast-name').value);
+              broadcastUI.createRoom({
+                roomName: (document.getElementById('broadcast-name') || {}).value || 'Anonymous',
+                isAudio: shared === 'audio'
+              });
+            });
+            hideUnnecessaryStuff();
+          });
         }
-      }
 
-      function rotateInCircle(video) {
-        video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
-        setTimeout(function() {
-          video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
-        }, 1000);
-      }
-    </script>
-    </article>
+        function captureUserMedia(callback) {
+          console.log("function captureUserMedia()");
+          var constraints = null;
+          // broadcastingOption = 'Only Audio';
+          window.option = broadcastingOption ? broadcastingOption.value : '';
+          if (option === 'Only Audio') {
+            constraints = {
+              audio: true,
+              video: false
+            };
 
-    <script>
-      let firstSpeakerPage = document.getElementById("firstSpeakerPage");
-      let secondSpeakerPage = document.getElementById("secondSpeakerPage");
-      let thirdSpeakerPage = document.getElementById("thirdSpeakerPage");
+            if (DetectRTC.hasMicrophone !== true) {
+              alert('DetectRTC library is unable to find microphone; maybe you denied microphone access once and it is still denied or maybe microphone device is not attached to your system or another app is using same microphone.');
+            }
+          }
+          if (option === 'Screen') {
+            var video_constraints = {
+              mandatory: {
+                chromeMediaSource: 'screen'
+              },
+              optional: []
+            };
+            constraints = {
+              audio: false,
+              video: video_constraints
+            };
 
-      let nextSpeakerButton = document.getElementById("nextSpeakerButton");
-      let goLiveButton = document.getElementById("goLiveButton");
-      let leaveBroadcastButton = document.getElementById("leaveBroadcastButton");
+            if (DetectRTC.isScreenCapturingSupported !== true) {
+              alert('DetectRTC library is unable to find screen capturing support. You MUST run chrome with command line flag "chrome --enable-usermedia-screen-capturing"');
+            }
+          }
 
-      nextSpeakerButton.addEventListener("click", function() {
-        firstSpeakerPage.style.display = 'none';
-        secondSpeakerPage.style.display = 'block';
-      });
+          if (option != 'Only Audio' && option != 'Screen' && DetectRTC.hasWebcam !== true) {
+            alert('DetectRTC library is unable to find webcam; maybe you denied webcam access once and it is still denied or maybe webcam device is not attached to your system or another app is using same webcam.');
+          }
 
-      goLiveButton.addEventListener("click", function() {
-        secondSpeakerPage.style.display = 'none';
-        thirdSpeakerPage.style.display = 'block';
-      });
+          var htmlElement = document.createElement(option === 'Only Audio' ? 'audio' : 'video');
 
-      leaveBroadcastButton.addEventListener("click", function() {});
-    </script>
+          htmlElement.muted = true;
+          htmlElement.volume = 0;
 
-    <!-- <footer class="footer">
+          try {
+            htmlElement.setAttributeNode(document.createAttribute('autoplay'));
+            htmlElement.setAttributeNode(document.createAttribute('playsinline'));
+            htmlElement.setAttributeNode(document.createAttribute('controls'));
+          } catch (e) {
+            htmlElement.setAttribute('autoplay', true);
+            htmlElement.setAttribute('playsinline', true);
+            htmlElement.setAttribute('controls', true);
+          }
+
+          var mediaConfig = {
+            video: htmlElement,
+            onsuccess: function(stream) {
+              config.attachStream = stream;
+
+              videosContainer.appendChild(htmlElement);
+              console.log("is the videosContainer.appendChild line executing");
+              rotateInCircle(htmlElement);
+
+              callback && callback();
+            },
+            onerror: function() {
+              if (option === 'Only Audio') alert('unable to get access to your microphone');
+              else if (option === 'Screen') {
+                if (location.protocol === 'http:') alert('Please test this WebRTC experiment on HTTPS.');
+                else alert('Screen capturing is either denied or not supported. Are you enabled flag: "Enable screen capture support in getUserMedia"?');
+              } else alert('unable to get access to your webcam');
+            }
+          };
+          if (constraints) mediaConfig.constraints = constraints;
+          getUserMedia(mediaConfig);
+        }
+
+
+
+
+        var broadcastUI = broadcast(config);
+
+        /* UI specific */
+        var videosContainer = document.getElementById('videos-container') || document.body;
+
+        var setupNewBroadcast = document.getElementById('setup-new-broadcast');
+
+        var roomsList = document.getElementById('rooms-list');
+
+        var broadcastingOption = document.getElementById('broadcasting-option');
+
+        if (setupNewBroadcast) setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
+
+
+        function hideUnnecessaryStuff() {
+          var visibleElements = document.getElementsByClassName('visible'),
+            length = visibleElements.length;
+          for (var i = 0; i < length; i++) {
+            visibleElements[i].style.display = 'none';
+          }
+        }
+
+        function rotateInCircle(video) {
+          video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
+          setTimeout(function() {
+            video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
+          }, 1000);
+        }
+      </script>
+      </article>
+
+      <script>
+        let firstSpeakerPage = document.getElementById("firstSpeakerPage");
+        let secondSpeakerPage = document.getElementById("secondSpeakerPage");
+        let thirdSpeakerPage = document.getElementById("thirdSpeakerPage");
+
+        let nextSpeakerButton = document.getElementById("nextSpeakerButton");
+        let goLiveButton = document.getElementById("setup-new-broadcast");
+        let leaveBroadcastButton = document.getElementById("leaveBroadcastButton");
+
+        nextSpeakerButton.addEventListener("click", function() {
+          firstSpeakerPage.style.display = 'none';
+          secondSpeakerPage.style.display = 'block';
+        });
+
+        goLiveButton.addEventListener("click", function() {
+          secondSpeakerPage.style.display = 'none';
+          thirdSpeakerPage.style.display = 'block';
+        });
+
+        leaveBroadcastButton.addEventListener("click", function() {});
+      </script>
+
+
+
+
+      <!-- <footer class="footer">
           <div id="footer" class="container-fluid">
             <div class="row">
               <div class="col-sm">

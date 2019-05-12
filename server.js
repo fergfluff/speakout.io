@@ -16,7 +16,7 @@ function serverHandler(request, response) {
 
         if (filename && filename.search(/server.js/g) !== -1) {
             response.writeHead(404, {
-                'Content-Type': 'text/plain'
+                'Content-Type': 'text/html'
             });
             response.write('404 Not Found: ' + path.join('/', uri) + '\n');
             response.end();
@@ -29,7 +29,7 @@ function serverHandler(request, response) {
             stats = fs.lstatSync(filename);
         } catch (e) {
             response.writeHead(404, {
-                'Content-Type': 'text/plain'
+                'Content-Type': 'text/html'
             });
             response.write('404 Not Found: ' + path.join('/', uri) + '\n');
             response.end();
@@ -48,7 +48,7 @@ function serverHandler(request, response) {
         fs.readFile(filename, 'utf8', function(err, file) {
             if (err) {
                 response.writeHead(500, {
-                    'Content-Type': 'text/plain'
+                    'Content-Type': 'text/html'
                 });
                 response.write('404 Not Found: ' + path.join('/', uri) + '\n');
                 response.end();
@@ -61,7 +61,7 @@ function serverHandler(request, response) {
         });
     } catch (e) {
         response.writeHead(404, {
-            'Content-Type': 'text/plain'
+            'Content-Type': 'text/html'
         });
         response.write('<h1>Unexpected error:</h1><br><br>' + e.stack || e.message || JSON.stringify(e));
         response.end();

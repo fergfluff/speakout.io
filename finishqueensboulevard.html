@@ -105,7 +105,7 @@
 
       <div id="firstListenerPage">
         <div>
-          <div class="row justify-content-md-center">
+          <div id="firstListenerPageDiv" class="row justify-content-md-center">
             <p class="instructionText">
               Decide how and when to use SpeakOut. To learn what data protections you can add yourself, go <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
             </p>
@@ -126,12 +126,12 @@
 
 
     <!-- SECOND LISTEN PAGE -->
-    <section id="secondListenerPage1" class="experiment">
+    <section  class="experiment">
       <div id="secondListenerPage" class="container-fluid">
-          <div class="row justify-content-md-center">
+          <div id="secondListenerPageDiv" class="row justify-content-md-center">
             <header style="text-align: center;">
               <p class="instructionText">
-                Welcome to ______’s broadcast!
+                Welcome to Finish Queens Boulevard's broadcast!
               </p>
               <p class="instructionText">
                 Use your phone’s speakers or headphones to listen.
@@ -165,11 +165,23 @@
 
     <section>
       <div id="thirdListenerPage">
+
+        <p class="instructionText">Finish Queens Boulevard's Broadcast</p>
         <!-- list of all available broadcasting rooms -->
         <table style="width: 100%;" id="rooms-list"></table>
 
         <!-- local/remote videos container -->
         <div id="videos-container"></div>
+
+        <div>
+          <div id="calltoActionButton" class="row justify-content-md-center">
+            <div class="col-md-4 col-lg-4">
+              <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
+            </div>
+          </div>
+        </div>
+
+        
       </div>
     </section>
 
