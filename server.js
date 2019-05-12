@@ -69,15 +69,8 @@ function serverHandler(request, response) {
 }
 
 let options = {
-  // Key and certificate for https, saved in root folder
-  // key: fs.readFileSync('my-key.pem'),
-  // cert: fs.readFileSync('my-cert.pem')
-  // key: fs.readFileSync('/etc/letsencrypt/live/www.speakout.io/privkey.pem'),
-  // cert: fs.readFileSync('/etc/letsencrypt/live/www.speakout.io/fullchain.pem')
   key: fs.readFileSync('/etc/letsencrypt/live/staging.speakout.io/privkey.pem'),
   cert: fs.readFileSync('/etc/letsencrypt/live/staging.speakout.io/cert.pem')
-
-
 };
 
 var app = server.createServer(options, serverHandler);

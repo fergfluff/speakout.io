@@ -32,14 +32,18 @@ var broadcast = function(config) {
   }
 
   function onDefaultSocketResponse(response) {
+    console.log("onDefaultSocketResponse")
     // this gets spammed
     // what is calling it?
     // openDefaultSocket
     // console.log("received socket ", response);
     if (response.userToken == self.userToken) return;
 
-    if (isGetNewRoom && response.roomToken && response.broadcaster) config.onRoomFound(response);
+    if (isGetNewRoom && response.roomToken && response.broadcaster) {
+      config.onRoomFound(response);
+    }
 
+    // ??? not executing here
     if (response.userToken && response.joinUser == self.userToken && response.participant && channels.indexOf(response.userToken) == -1) {
       channels += response.userToken + '--';
       openSubSocket({
@@ -61,6 +65,7 @@ var broadcast = function(config) {
       channel: _config.channel,
       onmessage: socketResponse,
       onopen: function() {
+        alert('anthony')
         console.log("should call initPeer");
         if (isofferer && !peer) { initPeer(); } else { console.log("bad"); }
       }
@@ -125,6 +130,7 @@ var broadcast = function(config) {
           htmlElement.addEventListener('play', function() {
             this.muted = false;
             this.volume = 1;
+            console.log('onRemoteStream')
             afterRemoteStreamStartedFlowing();
           }, false);
         } else onRemoteStreamStartsFlowing();
@@ -144,6 +150,7 @@ var broadcast = function(config) {
     }
 
     function onRemoteStreamStartsFlowing() {
+      console.log('onRemoteStreamStartsFlowing')
       if (navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i)) {
         // if mobile device
         return afterRemoteStreamStartedFlowing();
