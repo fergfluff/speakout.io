@@ -25,8 +25,8 @@
 }
 
 .navbar-brand {
-  font-family: 'fatbrushwkbold';
-  /* font-family: flood-std, sans-serif; */
+  /* font-family: 'fatbrushwkbold'; */
+  font-family: flood-std, sans-serif;
   /* font-family: 'Permanent Marker', cursive; */
 
 }
@@ -53,8 +53,8 @@
 
 #homepageLogo
  {
-  font-family: 'fatbrushwkbold';
-  /* font-family: flood-std, sans-serif; */
+  /* font-family: 'fatbrushwkbold'; */
+  font-family: flood-std, sans-serif;
   /* font-family: 'Permanent Marker', cursive; */
   text-align: center;
   font-size: 4.5rem;
@@ -62,8 +62,8 @@
 
 .subpageLogo
  {
-  font-family: 'fatbrushwkbold';
-  /* font-family: flood-std, sans-serif; */
+  /* font-family: 'fatbrushwkbold'; */
+  font-family: flood-std, sans-serif;
   /* font-family: 'Permanent Marker', cursive; */
   text-align: center;
   font-size: 3rem;
@@ -83,6 +83,12 @@
 
 .calltoAction {
   margin-top: 10%;
+  margin-bottom: 11%;
+  text-align: center;
+}
+
+.calltoAction2 {
+  margin-top: 2%;
   margin-bottom: 11%;
   text-align: center;
 }
@@ -173,7 +179,7 @@ ul {
 }
 
 #uniqueURLText {
-  font-size: .9rem;
+  font-size: .75rem;
 }
 
 #uniqueURLButton {
@@ -182,13 +188,12 @@ ul {
 }
 
 #broadcastingText {
-  padding-bottom: 40%;
+  padding-bottom: 10%;
 }
 
 #selectDiv {
-  margin-bottom: 50%;
+  margin-bottom: 5%;
 }
-
 
 #firstListenerPageDiv {
   margin-bottom: 20%;
@@ -204,6 +209,24 @@ ul {
 }
 
 #listenerMediaDiv {
+  margin-bottom: 30%;
+}
+
+#broadcasting-option {
+  display: none;
+}
+
+#videos-container {
+  padding-bottom: 10%;
+}
+
+#decisionRightsDiv {
+  padding-bottom: 30%;
+}
+
+#aboutTextDiv {
+  margin-left: 10%;
+  margin-right: 5%;
   margin-bottom: 30%;
 }
 
@@ -254,8 +277,8 @@ ul {
   }
   .subpageLogo
    {
-     font-family: 'fatbrushwkbold';
-     /* font-family: flood-std, sans-serif; */
+     /* font-family: 'fatbrushwkbold'; */
+     font-family: flood-std, sans-serif;
      /* font-family: 'Permanent Marker', cursive; */
     text-align: center;
     font-size: 5rem;
@@ -279,16 +302,51 @@ ul {
     margin-bottom: 25%;
   }
   #aboutTextDiv {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 25%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 30%;
   }
   .aboutP {
     padding: .25em;
     text-align: left;
   }
+  #broadcastingText {
+    padding-bottom: 2%;
+  }
 
+  #videos-container {
+    padding-bottom: 3%;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
 
+  #uniqueURLButton {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  #firstListenerPageDiv {
+    margin-bottom: 10%;
+  }
+
+  #secondListenerPageDiv {
+    margin-bottom: 10%;
+
+  }
+
+  #listenerMediaDiv {
+    margin-bottom: 10%;
+  }
+
+  #decisionRightsDiv {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0%;
+  }
+
+  #goHomeListenPageDiv {
+    padding-bottom: 10%;
+  }
 
 }
 
@@ -314,12 +372,12 @@ input {
 select {
     border: 1px solid #d9d9d9;
     border-radius: 1px;
-    height: 50px;
+    /* height: 50px; */
     margin-left: 1em;
-    margin-right: -12px;
+    /* margin-right: -12px; */
     padding: 1.1em;
     vertical-align: 6px;
-    width: 18%;
+    /* width: 18%; */
 }
 /* .setup {
     border-bottom-left-radius: 0;

@@ -101,12 +101,8 @@
 
     <div id="firstSpeakerPage" class="container-fluid">
       <div class="row justify-content-md-center">
-        <p class="instructionText">
-          Decide how and when to use SpeakOut.
-        </p>
-        <p class="instructionText">
-          To learn what data protections you can add yourself, go <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
-        </p>
+        <p class="instructionText">Decide how and when to use SpeakOut before asking others to join by listening.</p>
+        <p class="instructionText">Learn more SpeakOut's built-in data protections and additional modifications <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.</p>
       </div>
       <div class="calltoAction" class="calltoActionButton" class="row justify-content-md-center">
         <div class="calltoAction" class="col-md-4 col-lg-4">
@@ -117,43 +113,38 @@
 
 
     <!-- SECOND SPEAKER PAGE -->
-    <div id="secondSpeakerPage" class="row justify-content-md-center">
-      <div>
+    <div id="secondSpeakerPage" class="container-fluid">
+      <div class="row justify-content-md-center">
         <p class="instructionText">Give a public name for your broadcast.</p>
         <p class="instructionText">This will become the unique URL to give others.</p>
       </div>
+      <br>
       <br>
       <div class="row justify-content-md-center">
         <label class="instructionText" for="basic-url">Your unique URL:</label>
       </div>
 
-      <div id="selectDiv" class="input-group mb-3" class="row justify-content-md-center">
-        <select id="broadcasting-option">
-          <option>Audio + Video</option>
-          <option>Only Audio</option>
-          <option>Screen</option>
-        </select>
-      </div>
-
       <div id="inputForm" class="input-group mb-3" class="row justify-content-md-center">
-
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon3">https://speakout.io/</span>
         </div>
         <input id="broadcast-name" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
       </div>
       <br>
-      <div class="calltoAction">
-        <div class="calltoActionButton" class="row justify-content-md-center">
-          <div class="col-md-4 col-lg-4">
-            <a id="setup-new-broadcast" class="btn btn-secondary btn-lg btn-block" class="mobileButton" style="color: #fff" role="button">Go Live!</a>
-            <!-- <button id="setup-new-broadcast" class="setup" id="goLiveButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Go Live!</button> -->
-          </div>
+      <div id="selectDiv" class="calltoAction2" class="input-group mb-3" class="row justify-content-md-center">
+        <select id="broadcasting-option">
+          <option>Only Audio</option>
+          <!-- <option>Audio + Video</option> -->
+          <!-- <option>Screen</option> -->
+        </select>
+      </div>
+      <div class="calltoAction" class="calltoActionButton" class="row justify-content-md-center">
+        <div class="calltoAction" class="col-md-4 col-lg-4">
+          <a id="setup-new-broadcast" class="btn btn-secondary btn-lg btn-block" class="mobileButton" style="color: #fff" role="button">Go Live!</a>
+          <!-- <button id="setup-new-broadcast" class="setup" id="goLiveButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Go Live!</button> -->
         </div>
       </div>
-
       <!-- <input type="text" id="broadcast-name"> -->
-
       <!-- <button id="setup-new-broadcast" class="setup">Setup New Broadcast</button> -->
     </div>
 
@@ -182,7 +173,7 @@
         <div id="uniqueURLButton">
           <div class="centerText" class="row justify-content-md-center">
             <p class="instructionText">Share your link below with listeners. 🔗 </p>
-            <a class="btn btn-outline-primary" id="uniqueURLText" class="mobileButton" href="index.html" role="button">https://www.speakout.io/finishqueensboulevard</a>
+            <a class="btn btn-outline-primary" id="uniqueURLText" target="_blank" rel="noopener noreferrer" class="mobileButton" href="https://staging.speakout.io/finishqueensboulevard.html" role="button">https://www.staging.speakout.io/finishqueensboulevard</a>
           </div>
         </div>
 
