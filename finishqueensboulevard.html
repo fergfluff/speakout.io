@@ -107,7 +107,13 @@
         <div>
           <div id="firstListenerPageDiv" class="row justify-content-md-center">
             <p class="instructionText">
-              Decide how and when to use SpeakOut. To learn what data protections you can add yourself, go <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
+              Learn about built-in data protections and more that you can add yourself <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
+            </p>
+            <p class="instructionText">
+              Use your phone’s speakers or headphones to listen.
+            </p>
+            <p class="instructionText">
+              Consider not using SpeakOut if you’re near the speaker, as the audio might be distracting to them.
             </p>
           </div>
         </div>
@@ -116,7 +122,8 @@
           <div>
             <div id="calltoActionButton" class="row justify-content-md-center">
               <div class="col-md-4 col-lg-4">
-                <button id="nextListenerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Next</button>
+                <!-- <button id="nextListenerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Next</button> -->
+                <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
               </div>
             </div>
           </div>
@@ -127,25 +134,39 @@
 
     <!-- SECOND LISTEN PAGE -->
     <section class="experiment">
-      <div id="secondListenerPage" class="container-fluid">
+      <div id="thirdListenerPage" class="container-fluid">
         <div id="secondListenerPageDiv" class="row justify-content-md-center">
           <header style="text-align: center;">
-            <p class="instructionText">
+            <!-- <p class="instructionText">
               Welcome to Finish Queens Boulevard's broadcast!
-            </p>
-            <p class="instructionText">
-              Use your phone’s speakers or headphones to listen.
-            </p>
-            <p class="instructionText">
-              You may not need to use SpeakOut if you’re near the speaker, as the audio might be distracting.
-            </p>
+            </p> -->
+
           </header>
         </div>
 
-        <div id="calltoAction" class="container-fluid">
+        <!-- <div id="calltoAction" class="container-fluid">
           <div id="calltoActionButton" class="row justify-content-md-center">
             <div class="col-md-4 col-lg-4">
               <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
+            </div>
+          </div>
+        </div> -->
+
+        <div>
+          <div>
+            <p class="instructionText">Finish Queens Boulevard's Broadcast</p>
+          </div>
+          <div id="listenerMediaDiv">
+            <!-- list of all available broadcasting rooms -->
+            <table style="width: 100%;" id="rooms-list"></table>
+            <!-- local/remote videos container -->
+            <div id="videos-container"></div>
+          </div>
+
+          <!-- id="narrowButton"  -->
+          <div class="calltoActionButton" class="calltoAction" class="row justify-content-md-center">
+            <div class="calltoAction" class="col-md-4 col-lg-4">
+              <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
             </div>
           </div>
         </div>
@@ -163,27 +184,10 @@
     <!-- <button id="setup-new-broadcast" class="setup speakerClass">Start Broadcast</button> -->
     <!-- </section> -->
 
-    <section>
-      <div id="thirdListenerPage">
+    <!-- <section>
 
-        <div>
-          <p class="instructionText">Finish Queens Boulevard's Broadcast</p>
-        </div>
-        <div id="listenerMediaDiv">
-          <!-- list of all available broadcasting rooms -->
-          <table style="width: 100%;" id="rooms-list"></table>
-          <!-- local/remote videos container -->
-          <div id="videos-container"></div>
-        </div>
+    </section> -->
 
-        <!-- id="narrowButton"  -->
-        <div id="calltoActionButton" class="row justify-content-md-center">
-          <div class="col-md-4 col-lg-4">
-            <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <script>
       // Muaz Khan     - https://github.com/muaz-khan
@@ -245,8 +249,16 @@
 
           var tr = document.createElement('tr');
           tr.innerHTML = '<td><strong>' + room.roomName + '</strong> is live! Press Join to listen.</td>' +
-            '<td><button class="join">Join</button></td>';
+            '<td><button id="joinBroadcastButton" type="button" class="btn btn-primary btn-lg btn-block" class="mobileButton" class="btn-block class="join">Join</button></td>';
           roomsList.appendChild(tr);
+          //
+          // <div id="calltoAction" class="container-fluid">
+          //   <div id="calltoActionButton" class="row justify-content-md-center">
+          //     <div class="col-md-4 col-lg-4">
+          //       <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
+          //     </div>
+          //   </div>
+          // </div>
 
           var joinRoomButton = tr.querySelector('.join');
           joinRoomButton.setAttribute('data-broadcaster', room.broadcaster);
@@ -371,9 +383,6 @@
         getUserMedia(mediaConfig);
       }
 
-
-
-
       var broadcastUI = broadcast(config);
 
       /* UI specific */
@@ -385,69 +394,7 @@
 
       var broadcastingOption = document.getElementById('broadcasting-option');
 
-      // This if the new broadcast button has a value
-      // and user clicks the button,
-      // then run the click handler
-      // Create a new little function called submitUserName that
-      // if (setupNewBroadcast) setupNewBroadcast.onclick = submitUserName;
-
-      // Create the submitNameButton using javascript
-      //   var submitNameButton = document.createElement("button");
-      //   document.body.appendChild(submitNameButton);
-      // }
-
-      // then run javascript function showing and hiding classes
-      // document.getElementById("setupNewBroadcast").addEventListener("click", function() {
-      // 	console.log("user submitted Name")
-      //
-      //   hideClass("page1");
-      //   showClass("page2");
-      //
-      // });
-
-
-
       if (setupNewBroadcast) setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
-
-      // function hideClass(className) {
-      //
-      //   var divsToHide = document.getElementsByClassName(className); //divsToHide is an array
-      //     for(var i = 0; i < divsToHide.length; i++){
-      //         divsToHide[i].style.visibility = "hidden"; // or
-      //         divsToHide[i].style.display = "none"; // depending on what you're doing
-      //     }
-      //
-      //   }
-      //
-      //   function showClass(className) {
-      //
-      //     var divsToShow = document.getElementsByClassName(className); //divsToHide is an array
-      //       for(var i = 0; i < divsToShow.length; i++){
-      //           divsToShow[i].style.visibility = "visible"; // or
-      //           divsToShow[i].style.display = "block"; // depending on what you're doing
-      //       }
-      //
-      //     }
-
-
-
-
-      // function submitUserName() {
-      //
-      //   //call hideClass with the name of the class as a string so it can be compared/found
-      //   hideClass("page1");
-      //   showClass("page2");
-      //
-      //   // set the value of the input value to be the user's name
-      //   // userName will be used for the design of my website - to repeat the room's name as needed
-      //   config.userName = (document.getElementById('broadcast-name') || { }).value || 'Anonymous';
-      //   document.getElementById('broadcast-name').style.display = "none";
-      //
-      //   // Change the functionality of the button back to the original functionality
-      //   // could add fancy things like change the color/status of the button
-      //   setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
-      // }
-
 
       function hideUnnecessaryStuff() {
         var visibleElements = document.getElementsByClassName('visible'),
@@ -455,7 +402,7 @@
         for (var i = 0; i < length; i++) {
           visibleElements[i].style.display = 'none';
         }
-        debugger
+        // debugger
       }
 
       function rotateInCircle(video) {
@@ -479,8 +426,8 @@
 
     nextListenerButton.addEventListener("click", function() {
       firstListenerPage.style.display = 'none';
-      secondListenerPage.style.display = 'block';
-      // console.log(secondListenerPage.style.display);
+      // secondListenerPage.style.display = 'block';
+      thirdListenerPage.style.display = 'block';
     });
 
     joinBroadcastButton.addEventListener("click", function() {
@@ -488,7 +435,6 @@
       thirdListenerPage.style.display = 'block';
     });
 
-    // console.log("hi " + secondListenerPage.style.display);
   </script>
 
 

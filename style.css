@@ -25,8 +25,8 @@
 }
 
 .navbar-brand {
-  /* font-family: 'fatbrushwkbold'; */
-  font-family: flood-std, sans-serif;
+  font-family: 'fatbrushwkbold';
+  /* font-family: flood-std, sans-serif; */
   /* font-family: 'Permanent Marker', cursive; */
 
 }
@@ -53,8 +53,8 @@
 
 #homepageLogo
  {
-  /* font-family: 'fatbrushwkbold'; */
-  font-family: flood-std, sans-serif;
+  font-family: 'fatbrushwkbold';
+  /* font-family: flood-std, sans-serif; */
   /* font-family: 'Permanent Marker', cursive; */
   text-align: center;
   font-size: 4.5rem;
@@ -62,8 +62,8 @@
 
 .subpageLogo
  {
-  /* font-family: 'fatbrushwkbold'; */
-  font-family: flood-std, sans-serif;
+  font-family: 'fatbrushwkbold';
+  /* font-family: flood-std, sans-serif; */
   /* font-family: 'Permanent Marker', cursive; */
   text-align: center;
   font-size: 3rem;
@@ -277,8 +277,8 @@ ul {
   }
   .subpageLogo
    {
-     /* font-family: 'fatbrushwkbold'; */
-     font-family: flood-std, sans-serif;
+     font-family: 'fatbrushwkbold';
+     /* font-family: flood-std, sans-serif; */
      /* font-family: 'Permanent Marker', cursive; */
     text-align: center;
     font-size: 5rem;
