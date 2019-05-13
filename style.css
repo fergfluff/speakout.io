@@ -18,7 +18,13 @@
 
 }
 
+.navbar {
 
+    padding-top: 2rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+  }
 
 .navbar-dark .navbar-nav .nav-link .active {
     color: rgba(255,255,255,1.0);
