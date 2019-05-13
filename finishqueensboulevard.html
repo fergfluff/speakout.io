@@ -126,32 +126,32 @@
 
 
     <!-- SECOND LISTEN PAGE -->
-    <section  class="experiment">
+    <section class="experiment">
       <div id="secondListenerPage" class="container-fluid">
-          <div id="secondListenerPageDiv" class="row justify-content-md-center">
-            <header style="text-align: center;">
-              <p class="instructionText">
-                Welcome to Finish Queens Boulevard's broadcast!
-              </p>
-              <p class="instructionText">
-                Use your phone’s speakers or headphones to listen.
-              </p>
-              <p class="instructionText">
-                You may not need to use SpeakOut if you’re near the speaker, as the audio might be distracting.
-              </p>
-            </header>
-          </div>
+        <div id="secondListenerPageDiv" class="row justify-content-md-center">
+          <header style="text-align: center;">
+            <p class="instructionText">
+              Welcome to Finish Queens Boulevard's broadcast!
+            </p>
+            <p class="instructionText">
+              Use your phone’s speakers or headphones to listen.
+            </p>
+            <p class="instructionText">
+              You may not need to use SpeakOut if you’re near the speaker, as the audio might be distracting.
+            </p>
+          </header>
+        </div>
 
         <div id="calltoAction" class="container-fluid">
-            <div id="calltoActionButton" class="row justify-content-md-center">
-              <div class="col-md-4 col-lg-4">
-                <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
-              </div>
+          <div id="calltoActionButton" class="row justify-content-md-center">
+            <div class="col-md-4 col-lg-4">
+              <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
             </div>
+          </div>
         </div>
       </div>
     </section>
-      <!-- <section>
+    <!-- <section>
                     <select id="broadcasting-option">
                         <option>Audio + Video</option>
                         <option>Only Audio</option>
@@ -159,29 +159,30 @@
                     </select>
                     <input type="text" id="broadcast-name" class="speakerClass">
                     Create a Submit Name button that appear right away -->
-      <!-- This button becomes the "Start" button, and is hidden at first -->
-      <!-- <button id="setup-new-broadcast" class="setup speakerClass">Start Broadcast</button> -->
-      <!-- </section> -->
+    <!-- This button becomes the "Start" button, and is hidden at first -->
+    <!-- <button id="setup-new-broadcast" class="setup speakerClass">Start Broadcast</button> -->
+    <!-- </section> -->
 
     <section>
       <div id="thirdListenerPage">
 
-        <p class="instructionText">Finish Queens Boulevard's Broadcast</p>
-        <!-- list of all available broadcasting rooms -->
-        <table style="width: 100%;" id="rooms-list"></table>
-
-        <!-- local/remote videos container -->
-        <div id="videos-container"></div>
-
         <div>
-          <div id="calltoActionButton" class="row justify-content-md-center">
-            <div class="col-md-4 col-lg-4">
-              <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
-            </div>
-          </div>
+          <p class="instructionText">Finish Queens Boulevard's Broadcast</p>
+        </div>
+        <div id="listenerMediaDiv">
+          <!-- list of all available broadcasting rooms -->
+          <table style="width: 100%;" id="rooms-list"></table>
+          <!-- local/remote videos container -->
+          <div id="videos-container"></div>
         </div>
 
-        
+        <div id="narrowButton" class="row justify-content-md-center">
+            <div class="row justify-content-md-center">
+              <div class="col-md-4 col-lg-4">
+                <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
+              </div>
+            </div>
+        </div>
       </div>
     </section>
 

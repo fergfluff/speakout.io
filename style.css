@@ -198,6 +198,14 @@ ul {
   margin-bottom: 20%;
 }
 
+#narrowButton {
+  padding-left: 30%;
+  padding-right: 20%;
+}
+
+#listenerMediaDiv {
+  margin-bottom: 30%;
+}
 
 /* larger screens?  */
 @media (min-width: 576px) {
