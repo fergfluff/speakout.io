@@ -8,6 +8,8 @@ Welcome to my beta project for SpeakOut.
 
 This version does not fully work at the moment due to a server configuration bug 🐛. I will be restructuring the code soon and hope to release a fully working version over the summer.
 
+![Web app for SpeakOut](http://www.itpblogelizabethferguson.com/wp-content/uploads/2019/05/speakouthomepage2-1024x576.png)
+
 **What It Is**
 
 SpeakOut is a tool for broadcasting speeches at protests using mobile devices. It runs in the browser using WebRTC, requiring no native app download.
