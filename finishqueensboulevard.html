@@ -1,451 +1,147 @@
-<!--
-> WebRTC Broadcasting Open Source Code:
-> Muaz Khan     - wwww.MuazKhan.com
-> MIT License   - www.WebRTC-Experiment.com/licence
-> Documentation - github.com/muaz-khan/WebRTC-Experiment/tree/master/video-broadcasting
--->
-
-
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>listen</title>
 
-  <script>
-    // if(!location.hash.replace('#', '').length) {
-    //     location.href = location.href.split('#')[0] + '#' + (Math.random() * 100).toString().replace('.', '');
-    //     location.reload();
-    // }
-  </script>
+	<title>speakout.io</title>
+	<link rel="author" type="text/html" href="https://www.elizabethjeaneferguson.com/">
+	<meta name="author" content="Elizabeth Ferguson">
 
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <!-- Muaz Khan's viewport code -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
-  <!-- Bootstrap's viewport code -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="author" type="text/html" href="https://www.elizabethjeaneferguson.com/">
-  <meta name="author" content="Elizabeth Ferguson">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <!-- <link rel="stylesheet" href="/muazkhanstyle.css"> -->
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css" type="text/css">
-  <!-- Adobe font -->
-  <link rel="stylesheet" href="https://use.typekit.net/lig4qcn.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<!-- Bootstrap's viewport code -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<!-- Adobe font -->
+	<link rel="stylesheet" href="https://use.typekit.net/lig4qcn.css">
 
-  <link rel="icon" type="image/png" href="iconSpeakOut.png">
+	<link rel="icon" type="image/png" href="/images/iconSpeakOut.png">
 
-  <script>
-    document.createElement('article');
-    document.createElement('footer');
-  </script>
+	<!-- TODO: Bootstrap code needs to be downloaded locally -->
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <!-- TODO: Bootstrap code needs to be downloaded locally -->
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <!-- Local copies of this code are saved on my machine  -->
-  <!-- This Library is used to detect WebRTC features -->
-  <!-- Local copies of this code are saved on my machine  -->
-  <script src="https://www.webrtc-experiment.com/DetectRTC.js"></script>
-  <!-- My updated socket.io copy -->
-  <script src="/socket.io.js"></script>
-  <!-- Muaz Khan's hosted socket.io copy -->
-  <!-- <script src="https://cdn.webrtc-experiment.com/socket.io.js"> </script> -->
-  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-  <script src="https://www.webrtc-experiment.com/IceServersHandler.js"></script>
-  <script src="https://www.webrtc-experiment.com/CodecsHandler.js"></script>
-  <script src="https://www.webrtc-experiment.com/RTCPeerConnection-v1.5.js"></script>
-  <script src="broadcast.js"></script>
+	<!-- include client side socket library -->
+	<script src="/socket.io/socket.io.js"></script>
+
+	<!-- this file is already included in the folder -->
+	<script src="peer.min.js"></script>
+
+	<script src="listen.js"></script>
+
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+	<!-- NAVIGATION -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-    <a class="navbar-brand" href="index.html">SpeakOut</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="speak.html">Speak</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link active" href="finishqueensboulevard.html">Listen</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="decisionrights.html">Data Decision Rights</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+		<a class="navbar-brand" href="index.html">SpeakOut</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto nav nav-pills">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" href="speak.html">Speak</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link active" href="finishqueensboulevard.html">Listen</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="decisionrights.html">Data Decision Rights</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-  <article>
+	<article>
 
-    <!-- FIRST SPEAKER PAGE -->
-    <div class="container-fluid">
-      <div class="attractDiv">
-        <h1 class="subpageLogo">
+		<!-- FIRST SPEAKER PAGE -->
+		<div class="container-fluid">
+			<div class="attractDiv">
+				<h1 class="subpageLogo">
               Listen
           </h1>
-      </div>
+			</div>
 
-      <div id="firstListenerPage">
-        <div>
-          <div id="firstListenerPageDiv" class="row justify-content-md-center">
-            <p class="instructionText">
-              Learn about built-in data protections and more that you can add yourself <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
-            </p>
-            <p class="instructionText">
-              Use your phone’s speakers or headphones to listen.
-            </p>
-            <p class="instructionText">
-              Consider not using SpeakOut if you’re near the speaker, as the audio might be distracting to them.
-            </p>
-          </div>
-        </div>
+			<div id="firstListenerPage">
+				<div>
+					<div id="firstListenerPageDiv" class="row justify-content-md-center">
+						<p class="instructionText">
+							Learn about built-in data protections and more that you can add yourself <a style="text-decoration: underline" href='/decisionrights.html'>here</a>.
+						</p>
+						<p class="instructionText">
+							Use your phone’s speakers or headphones to listen.
+						</p>
+						<p class="instructionText">
+							Consider not using SpeakOut if you’re near the speaker, as the audio might be distracting to them.
+						</p>
+					</div>
+				</div>
 
-        <div id="calltoAction">
-          <div>
-            <div id="calltoActionButton" class="row justify-content-md-center">
-              <div class="col-md-4 col-lg-4">
-                <!-- <button id="nextListenerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Next</button> -->
-                <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- SECOND LISTEN PAGE -->
-    <section class="experiment">
-      <div id="thirdListenerPage" class="container-fluid">
-        <div id="secondListenerPageDiv" class="row justify-content-md-center">
-          <header style="text-align: center;">
-            <!-- <p class="instructionText">
-              Welcome to Finish Queens Boulevard's broadcast!
-            </p> -->
-
-          </header>
-        </div>
-
-        <!-- <div id="calltoAction" class="container-fluid">
-          <div id="calltoActionButton" class="row justify-content-md-center">
-            <div class="col-md-4 col-lg-4">
-              <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
-            </div>
-          </div>
-        </div> -->
-
-        <div>
-          <div>
-            <p class="instructionText">Finish Queens Boulevard's Broadcast</p>
-          </div>
-          <div id="listenerMediaDiv">
-            <!-- list of all available broadcasting rooms -->
-            <table style="width: 100%;" id="rooms-list"></table>
-            <!-- local/remote videos container -->
-            <div id="videos-container"></div>
-          </div>
-
-          <!-- id="narrowButton"  -->
-          <div class="calltoActionButton" class="calltoAction" class="row justify-content-md-center">
-            <div class="calltoAction" class="col-md-4 col-lg-4">
-              <a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- <section>
-                    <select id="broadcasting-option">
-                        <option>Audio + Video</option>
-                        <option>Only Audio</option>
-                        <option>Screen</option>
-                    </select>
-                    <input type="text" id="broadcast-name" class="speakerClass">
-                    Create a Submit Name button that appear right away -->
-    <!-- This button becomes the "Start" button, and is hidden at first -->
-    <!-- <button id="setup-new-broadcast" class="setup speakerClass">Start Broadcast</button> -->
-    <!-- </section> -->
-
-    <!-- <section>
-
-    </section> -->
+				<div id="calltoAction">
+					<div>
+						<div id="calltoActionButton" class="row justify-content-md-center">
+							<div class="col-md-4 col-lg-4">
+								<!-- <button id="nextListenerButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Next</button> -->
+								<button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-    <script>
-      // Muaz Khan     - https://github.com/muaz-khan
-      // MIT License   - https://www.webrtc-experiment.com/licence/
-      // Documentation - https://github.com/muaz-khan/WebRTC-Experiment/tree/master/webrtc-broadcasting
+		<!-- SECOND LISTEN PAGE -->
+		<section class="experiment">
+			<div id="thirdListenerPage" class="container-fluid">
+				<div id="secondListenerPageDiv" class="row justify-content-md-center">
+				</div>
 
-      var config = {
-        openSocket: function(config) {
-          console.log("openSocket");
+				<div>
+					<div>
+						<p class="instructionText">Finish Queens Boulevard's Broadcast</p>
+					</div>
+					<div id="listenerMediaDiv">
+						<!-- list of all available broadcasting rooms -->
+						<table style="width: 100%;" id="rooms-list"></table>
+						<div id="videos-container"></div>
+					</div>
 
-          // var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
-          var SIGNALING_SERVER = 'https://www.speakout.io:9559/';
-          // var SIGNALING_SERVER = 'https://www.staging.speakout.io:9559/';
-
-
-          //config.channel = config.channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
-          config.channel = config.channel || "asdf";
-
-          var sender = Math.round(Math.random() * 999999999) + 999999999;
-
-          io.connect(SIGNALING_SERVER).emit('new-channel', {
-            channel: config.channel,
-            sender: sender
-          });
-
-          var socket = io.connect(SIGNALING_SERVER + config.channel);
-          socket.channel = config.channel;
-          socket.on('connect', function() {
-            if (config.callback) config.callback(socket);
-          });
-
-          socket.send = function(message) {
-            console.log("sending through socket: " + message);
-            socket.emit('message', {
-              sender: sender,
-              data: message
-            });
-          };
-
-          socket.on('message', config.onmessage);
-        },
-
-        onRemoteStream: function(htmlElement) {
-          // this is not happening and it should
-          console.log("onRemoteStream");
-          videosContainer.appendChild(htmlElement);
-          rotateInCircle(htmlElement);
-        },
-
-        // I can remove this function on /speak to prevent join broadcast button appearing
-        onRoomFound: function(room) {
-          // this gets spammed
-          // onRoomFound is in broadcast.js here: line 40 config.onRoomFound(response)
-          console.log("onRoomFound, line 174");
-          var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
-          if (alreadyExist) return;
-
-          if (typeof roomsList === 'undefined') roomsList = document.body;
-
-          var tr = document.createElement('tr');
-          tr.innerHTML = '<td><strong>' + room.roomName + '</strong> is live! Press Join to listen.</td>' +
-            '<td><button id="joinBroadcastButton" type="button" class="btn btn-primary btn-lg btn-block" class="mobileButton" class="btn-block class="join">Join</button></td>';
-          roomsList.appendChild(tr);
-          //
-          // <div id="calltoAction" class="container-fluid">
-          //   <div id="calltoActionButton" class="row justify-content-md-center">
-          //     <div class="col-md-4 col-lg-4">
-          //       <button id="joinBroadcastButton" type="button" class="btn btn-secondary btn-lg btn-block" class="mobileButton" class="btn-block">Join Broadcast</button>
-          //     </div>
-          //   </div>
-          // </div>
-
-          var joinRoomButton = tr.querySelector('.join');
-          joinRoomButton.setAttribute('data-broadcaster', room.broadcaster);
-          joinRoomButton.setAttribute('data-roomToken', room.broadcaster);
-
-          joinRoomButton.onclick = function() {
-            console.log("joinRoomButton clicked");
-            this.disabled = true;
-
-            var broadcaster = this.getAttribute('data-broadcaster');
-            var roomToken = this.getAttribute('data-roomToken');
-            broadcastUI.joinRoom({
-              roomToken: roomToken,
-              joinUser: broadcaster
-            });
-            hideUnnecessaryStuff();
-          };
-        },
-        onNewParticipant: function(numberOfViewers) {
-          document.title = 'Listeners: ' + numberOfViewers;
-        },
-        onReady: function() {
-          console.log('now you can open or join rooms');
-        }
-      };
-
-      function setupNewBroadcastButtonClickHandler() {
-        console.log("setupNewBroadcastButtonClickHandler");
-        document.getElementById('broadcast-name').disabled = true;
-        document.getElementById('setup-new-broadcast').style.visibility = "hidden";
-
-        DetectRTC.load(function() {
-          captureUserMedia(function() {
-            var shared = 'video';
-            if (window.option == 'Only Audio') {
-              shared = 'audio';
-            }
-            if (window.option == 'Screen') {
-              shared = 'screen';
-            }
-
-            console.log("create room being called: " + document.getElementById('broadcast-name').value);
-            broadcastUI.createRoom({
-              roomName: (document.getElementById('broadcast-name') || {}).value || 'Anonymous',
-              isAudio: shared === 'audio'
-            });
-          });
-          hideUnnecessaryStuff();
-        });
-      }
-
-      function captureUserMedia(callback) {
-        var constraints = null;
-        window.option = broadcastingOption ? broadcastingOption.value : '';
-        if (option === 'Only Audio') {
-          constraints = {
-            audio: true,
-            video: false
-          };
-
-          if (DetectRTC.hasMicrophone !== true) {
-            alert('DetectRTC library is unable to find microphone; maybe you denied microphone access once and it is still denied or maybe microphone device is not attached to your system or another app is using same microphone.');
-          }
-        }
-        if (option === 'Screen') {
-          var video_constraints = {
-            mandatory: {
-              chromeMediaSource: 'screen'
-            },
-            optional: []
-          };
-          constraints = {
-            audio: false,
-            video: video_constraints
-          };
-
-          if (DetectRTC.isScreenCapturingSupported !== true) {
-            alert('DetectRTC library is unable to find screen capturing support. You MUST run chrome with command line flag "chrome --enable-usermedia-screen-capturing"');
-          }
-        }
-
-        if (option != 'Only Audio' && option != 'Screen' && DetectRTC.hasWebcam !== true) {
-          alert('DetectRTC library is unable to find webcam; maybe you denied webcam access once and it is still denied or maybe webcam device is not attached to your system or another app is using same webcam.');
-        }
-
-        var htmlElement = document.createElement(option === 'Only Audio' ? 'audio' : 'video');
-
-        htmlElement.muted = true;
-        htmlElement.volume = 0;
-
-        try {
-          htmlElement.setAttributeNode(document.createAttribute('autoplay'));
-          htmlElement.setAttributeNode(document.createAttribute('playsinline'));
-          htmlElement.setAttributeNode(document.createAttribute('controls'));
-        } catch (e) {
-          htmlElement.setAttribute('autoplay', true);
-          htmlElement.setAttribute('playsinline', true);
-          htmlElement.setAttribute('controls', true);
-        }
-
-        var mediaConfig = {
-          video: htmlElement,
-          onsuccess: function(stream) {
-            console.log("onsuccess");
-            config.attachStream = stream;
-
-            videosContainer.appendChild(htmlElement);
-            console.log("videosContainer.appendChild");
-            rotateInCircle(htmlElement);
-
-            callback && callback();
-          },
-          onerror: function() {
-            if (option === 'Only Audio') alert('unable to get access to your microphone');
-            else if (option === 'Screen') {
-              if (location.protocol === 'http:') alert('Please test this WebRTC experiment on HTTPS.');
-              else alert('Screen capturing is either denied or not supported. Are you enabled flag: "Enable screen capture support in getUserMedia"?');
-            } else alert('unable to get access to your webcam');
-          }
-        };
-        if (constraints) mediaConfig.constraints = constraints;
-        getUserMedia(mediaConfig);
-      }
-
-      var broadcastUI = broadcast(config);
-
-      /* UI specific */
-      var videosContainer = document.getElementById('videos-container') || document.body;
-
-      var setupNewBroadcast = document.getElementById('setup-new-broadcast');
-
-      var roomsList = document.getElementById('rooms-list');
-
-      var broadcastingOption = document.getElementById('broadcasting-option');
-
-      if (setupNewBroadcast) setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
-
-      function hideUnnecessaryStuff() {
-        var visibleElements = document.getElementsByClassName('visible'),
-          length = visibleElements.length;
-        for (var i = 0; i < length; i++) {
-          visibleElements[i].style.display = 'none';
-        }
-        // debugger
-      }
-
-      function rotateInCircle(video) {
-        video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
-        setTimeout(function() {
-          video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
-        }, 1000);
-      }
-
-      // 'Listeners: ' + numberOfViewers
-    </script>
-  </article>
-
-  <script>
-    let firstListenerPage = document.getElementById("firstListenerPage");
-    let secondListenerPage = document.getElementById("secondListenerPage");
-    let thirdListenerPage = document.getElementById("thirdListenerPage");
-
-    let nextListenerButton = document.getElementById("nextListenerButton");
-    let joinBroadcastButton = document.getElementById("joinBroadcastButton");
-
-    nextListenerButton.addEventListener("click", function() {
-      firstListenerPage.style.display = 'none';
-      // secondListenerPage.style.display = 'block';
-      thirdListenerPage.style.display = 'block';
-    });
-
-    joinBroadcastButton.addEventListener("click", function() {
-      secondListenerPage.style.display = 'none';
-      thirdListenerPage.style.display = 'block';
-    });
-
-  </script>
+					<!-- id="narrowButton"  -->
+					<div class="calltoActionButton" class="calltoAction" class="row justify-content-md-center">
+						<div class="calltoAction" class="col-md-4 col-lg-4">
+							<a id="leaveBroadcastButton" class="btn btn-secondary btn-lg btn-block" class="mobileButton" href="index.html" role="button">Leave Broadcast</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 
-  <!-- <footer>
-            <p>
-                <a href="https://www.speakout.io/">speakout.io</a>
-                © <a href="https://www.speakout.io/about" rel="author" target="_blank">Aboutn</a>
-            </p>
-        </footer> -->
+		<audio id="myaudio">
+		<!-- Your browser does not support the audio element. -->
+	</audio>
+
+		<p id="currentlisteners">Current Listeners</p>
+		<p id="numberlisteners">#</p>
 
 
 </body>
+
+
 
 </html>
